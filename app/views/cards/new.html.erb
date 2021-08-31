@@ -1,10 +1,32 @@
 <div class="container">
   <h3>Card Creator</h3>
-  <div class="card-creator">
-  <%= simple_form_for @card, url: create_card_path(params[:id]) do |f| %>
-  <%= f.input :front_page %>
-  <%= f.input :back_page %>
-  <%= f.button :submit, class: 'btn btn-primary' %>
+
+  <% unless @cards.nil? %>
+    <% @cards.each do |card| %>
+        <div class="list-cards">
+          <%= simple_form_for card, html: {class: "row"}, url: create_card_path(params[:id]) do |f| %>
+            <div class="col">
+              <%= f.input :front_page, label: false %>
+            </div>
+            <div class="col">
+              <%= f.input :back_page, label: false %>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
   <% end %>
+
+  <div class="card-creator">
+      <%= simple_form_for @card, html: {class: "row"}, url: create_card_path(params[:id]) do |f| %>
+        <div class="col">
+          <%= f.input :front_page, label: false, placeholder: 'Front' %>
+        </div>
+        <div class="col">
+          <%= f.input :back_page, label: false, placeholder: 'Back' %>
+        </div>
   </div>
+      <div class="text-center">
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      </div>
+      <% end %>
 </div>

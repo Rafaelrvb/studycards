@@ -1,11 +1,12 @@
 class CardsController < ApplicationController
 
   def index
-    @deck = Deck.find(params[:id])
-    @cards = Card.where(deck_id: @deck.id)
+    list_all_cards
   end
 
   def new
+    @deck = Deck.find(params[:id])
+    @cards = Card.where(deck_id: @deck.id)
     @card = Card.new
   end
 
@@ -22,5 +23,10 @@ class CardsController < ApplicationController
 
   def card_params
     params.require(:card).permit(:front_page, :back_page)
+  end
+
+  def list_all_cards
+    @deck = Deck.find(params[:id])
+    @cards = Card.where(deck_id: @deck.id)
   end
 end
