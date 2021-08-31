@@ -1,1 +1,7 @@
-<h1>index do deck</h1>
+<div class="container">
+  <h1>index do deck</h1>
+  <% @decks.each do |deck| %>
+  <h4><%= deck.title %> - <%= link_to "show me", show_path(deck) %></h4>
+  <% end %>
+
+</div>

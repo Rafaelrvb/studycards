@@ -10,6 +10,7 @@ class DecksController < ApplicationController
 
   def new # /deck/new
     @deck = Deck.new
+    #@card = Card.new
   end
 
   def create

@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many :deck_communities, dependent: :destroy
   has_many :deck_reviews, dependent: :destroy
 
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
