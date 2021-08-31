@@ -4,11 +4,11 @@ class DecksController < ApplicationController
     @decks = Deck.all
   end
 
-  def show # /deck/:id
+  def show # /decks/:id
     @deck = Deck.find(params[:id])
   end
 
-  def new # /deck/new
+  def new # /decks/new
     @deck = Deck.new
     #@card = Card.new
   end
@@ -18,7 +18,7 @@ class DecksController < ApplicationController
     @deck.user_id = current_user.id
     @deck.save
 
-    redirect_to root_path
+    redirect_to new_card_path(@deck.id)
   end
 
   private

@@ -1,13 +1,10 @@
 <div class="container">
   <h1>criar novo deck</h1>
-
-
-  <h3>Button to create cards</h3>
-
-
-
-
-
-
-
+  <div>
+    <%= simple_form_for @deck, url: create_path do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>

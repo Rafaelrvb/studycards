@@ -1,0 +1,7 @@
+<div class="container">
+  <h3>Must show all cards from deck: <em><%= @deck.title %></em></h3>
+
+  <% @cards.each_with_index do |card, index| %>
+  <p><%= index + 1 %>: <%= card.front_page %> | <%= card.back_page %></p>
+  <% end %>
+</div>
