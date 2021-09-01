@@ -17,7 +17,17 @@
   }
 
   .nav-link{
-    padding: 5px;
     background-color: #FFF7AE;
     margin-left: 10px;
   }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+ #navbar-button{
+   background-color: white;
+   border-left: none !important;
+ }
+//  How to overide the backgroung-color from the icon in the navbar???
+//  Why is the items are not align
+// space in between
