@@ -8,8 +8,11 @@ class Deck < ApplicationRecord
   validates :description, length: { minimum: 6 }
   validates :title, uniqueness: { scope: [:user_id] }
 
-  # include PgSearch::Model
-  # pg_search_scope :search_by_decks,
-  # against: [ 55555]
+  include PgSearch::Model
+  pg_search_scope :search_by_title,
+    against: [:title],
+    using: {
+      tsearch: { prefix: true }
+    }
 
 end
