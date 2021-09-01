@@ -1,7 +1,31 @@
-<div class="container">
-  <h1>index do deck</h1>
+<div class="container text-center my-3">
+  <h3 id="search-header">42 decks matches your search!</h3>
+  <div class="deck-header">
+    <div>Deck</div>
+    <div>Creator</div>
+    <div>N° of cards</div>
+    <div>Users</div>
+    <div>Rating</div>
+  </div>
+
   <% @decks.each do |deck| %>
-  <h4><%= deck.title %> - <%= link_to "show me", show_path(deck) %> - <%= link_to "all cards", list_cards_path(deck) %></h4>
+    <div class="deck">
+        <div style="border-right: solid 1px;">
+          <%= link_to "#{deck.title}", show_path(deck) %>
+        </div>
+        <div>
+          <%= User.find(deck.user_id).email %>
+        </div>
+        <div>
+          350 cards
+        </div>
+        <div>
+          5090 users
+        </div>
+        <div>
+          ⭐⭐⭐⭐
+        </div>
+      </div>
   <% end %>
 
 </div>
