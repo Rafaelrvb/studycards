@@ -4,12 +4,16 @@
   <% unless @cards.nil? %>
     <% @cards.each do |card| %>
         <div class="list-cards">
-          <%= simple_form_for card, html: {class: "row"}, url: create_card_path(params[:id]) do |f| %>
+          <%= simple_form_for card, html: {class: "row"}, url: update_card_path(card.id) do |f| %>
             <div class="col">
               <%= f.input :front_page, label: false %>
             </div>
             <div class="col">
               <%= f.input :back_page, label: false %>
+            </div>
+            <div class="btn-update-delete" style="left: -20px;">
+              <%= f.button :submit, value: 'Update', class: 'btn btn-sm btn-primary'  %>
+              <%= link_to 'Delete', destroy_card_path(card.id), :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-sm btn-primary' %>
             </div>
           <% end %>
         </div>

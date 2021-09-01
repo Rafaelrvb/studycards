@@ -1,8 +1,9 @@
-<div class="container">
-  <h3>Must show all cards from deck: <em><%= @deck.title %></em></h3>
+<div class="container text-justify">
+  <h3>Deck: <%= @deck.title %></h3>
+  <h4>All cards:</h4>
 
   <% @cards.each_with_index do |card, index| %>
-  <p><%= index + 1 %>: <%= card.front_page %> | <%= card.back_page %></p>
+  <p class="mb-1"><%= index + 1 %>: <%= card.front_page %> | <%= card.back_page %></p>
   <% end %>
   <div>
   <%= link_to "Add more cards", new_card_path(params[:id]) %>
