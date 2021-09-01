@@ -8,6 +8,7 @@
 require "faker"
 
 puts "cleaning the database"
+Card.destroy_all
 Deck.destroy_all
 User.destroy_all
 puts "database cleaned"
@@ -32,13 +33,24 @@ puts "#{user.id} - #{user.name} created"
   user.save
   puts "#{user.id} - #{user.name} created"
 
-  (5..10).to_a.sample.times do
+  5.times do
     deck = Deck.new(
-      title: Faker::Educator.course_name ,
-      description: Faker::Educator.subject,
+      title: Faker::Movie.title,
+      description: Faker::Movie.quote,
       user_id: user.id
     )
     deck.save
     puts "#{deck.id} - #{deck.title} created"
+
+    5.times do
+      card = Card.new(
+        front_page: "Ask?",
+        back_page: Faker::ChuckNorris.fact,
+        deck_id: deck.id
+      )
+      card.save
+      puts "Card #{card.id} created"
+    end
+
   end
 end
