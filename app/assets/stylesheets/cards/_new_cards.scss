@@ -1,0 +1,10 @@
+.list-cards {
+  padding: 2px;
+  margin-bottom: 8px;
+  position: relative;
+  .btn-update-delete {
+    position: absolute;
+    top: auto;
+    right: -160px;
+  }
+}

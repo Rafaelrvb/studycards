@@ -1,5 +1,5 @@
-<div class="container">
-  <h3>Card Creator</h3>
+<div class="container my-3">
+  <h3><%= @cards.nil? ? "Creating" : "Editing" %> <%= @deck.title %></h3>
   <div>
   <% unless @cards.nil? %>
     <% @cards.each do |card| %>
@@ -11,7 +11,7 @@
             <div class="col">
               <%= f.input :back_page, label: false %>
             </div>
-            <div class="btn-update-delete" style="left: -20px;">
+            <div class="btn-update-delete">
               <%= f.button :submit, value: 'Update', class: 'btn btn-sm btn-primary'  %>
               <%= link_to 'Delete', destroy_card_path(card.id), :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-sm btn-primary' %>
             </div>
@@ -21,20 +21,21 @@
   <% end %>
   </div>
   <hr>
-      <%= simple_form_for @card, url: create_card_path(params[:id]) do |f| %>
-        <div class="d-flex">
-          <div>
-            <%= f.input :front_page, label: false, placeholder: 'Front' %>
-          </div>
-          <div>
-            <%= f.input :back_page, label: false, placeholder: 'Back' %>
-          </div>
+  <div class="card-creator">
+    <%= simple_form_for @card, url: create_card_path(params[:id]) do |f| %>
+      <div class="row">
+        <div class="col">
+          <%= f.input :front_page, label: false, placeholder: 'Front' %>
         </div>
-
-        <div class="text-center">
+        <div class="col">
+          <%= f.input :back_page, label: false, placeholder: 'Back' %>
+        </div>
+      </div>
+        <div class="text-center my-3">
           <%= f.button :submit, class: 'btn btn-primary' %>
         </div>
-      <% end %>
+    <% end %>
+  </div>
 
 
 </div>
