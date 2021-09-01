@@ -1,6 +1,6 @@
 <div class="container">
   <h3>Card Creator</h3>
-
+  <div>
   <% unless @cards.nil? %>
     <% @cards.each do |card| %>
         <div class="list-cards">
@@ -19,6 +19,7 @@
         </div>
     <% end %>
   <% end %>
+  </div>
   <hr>
   <div class="card-creator">
       <%= simple_form_for @card, html: {class: "row"}, url: create_card_path(params[:id]) do |f| %>
@@ -29,8 +30,8 @@
           <%= f.input :back_page, label: false, placeholder: 'Back' %>
         </div>
   </div>
-      <div class="text-center">
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      </div>
+        <div class="text-center">
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        </div>
       <% end %>
 </div>
