@@ -1,1 +1,18 @@
-<h1>landing page studycards</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('<%= image_path "studying.jpeg" %>');">
+    <div class="container text-center">
+
+      <h1>StudyCards</h1>
+      <p>Revolutionize the way you learn!</p>
+      <%= link_to 'Create a card', user_session_path, class: 'btn btn-primary btn-lg mt-5' %>
+      <%= link_to 'Find a flashcard', user_session_path, class: 'btn btn-primary btn-lg mt-5' %>
+
+    </div>
+</div>
+<div class="banner middle-banner">
+    <div class="container text-center">
+
+      <h1>See how it works</h1>
+      <div class= "middle-gif">
+      <iframe src="https://giphy.com/embed/IPbS5R4fSUl5S" width="480" height="266" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
+
+</div>
