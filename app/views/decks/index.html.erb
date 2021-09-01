@@ -1,5 +1,5 @@
 <div class="container text-center my-3">
-  <h3 id="search-header">42 decks matches your search!</h3>
+  <h3 id="search-header"><%= @decks.count %> decks matches your search!</h3>
   <div class="deck-header">
     <div>Deck</div>
     <div>Creator</div>
@@ -10,14 +10,14 @@
 
   <% @decks.each do |deck| %>
     <div class="deck">
-        <div style="border-right: solid 1px;">
+        <div style="border-right: solid 1px; overflow: hidden">
           <%= link_to "#{deck.title}", show_path(deck) %>
         </div>
         <div>
-          <%= User.find(deck.user_id).email %>
+          <%= User.find(deck.user_id).name %>
         </div>
         <div>
-          350 cards
+          <%= Card.where(deck_id: deck.id).count %>
         </div>
         <div>
           5090 users
