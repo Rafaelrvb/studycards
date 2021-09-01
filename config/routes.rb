@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get '/decks/:id/cards/new', to: 'cards#new', as: :new_card
     post '/decks/:id/cards/create', to: 'cards#create', as: :create_card
     get '/decks/:id/cards/index', to: 'cards#index', as: :list_cards
+    patch '/cards/:id', to: 'cards#update', as: :update_card
+    delete '/cards/:id', to: 'cards#destroy', as: :destroy_card
 
 
 

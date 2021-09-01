@@ -19,6 +19,20 @@ class CardsController < ApplicationController
     redirect_to new_card_path(params[:id])
   end
 
+  def update
+    @card = Card.find(params[:id])
+    @card.update(card_params)
+
+    redirect_to new_card_path(@card.deck_id)
+  end
+
+  def destroy
+    @card = Card.find(params[:id])
+    @card.destroy
+
+    redirect_to new_card_path(@card.deck_id)
+  end
+
   private
 
   def card_params
