@@ -25,10 +25,14 @@
   .form-group {
     margin-bottom: 0;
   }
+
+  #logo{
+    width: 180px;
+    height: 65px;
+    background: url(logo3.jpg);
+    mix-blend-mode: multiply;
+  }
  #navbar-button{
    background-color: white;
    border-left: none !important;
  }
-//  How to overide the backgroung-color from the icon in the navbar???
-//  Why is the items are not align
-// space in between

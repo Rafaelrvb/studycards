@@ -8,6 +8,7 @@ class CardsController < ApplicationController
     @deck = Deck.find(params[:id])
     @cards = Card.where(deck_id: @deck.id)
     @card = Card.new
+    @card.deck = @deck
   end
 
   def create
