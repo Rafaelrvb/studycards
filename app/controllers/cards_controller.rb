@@ -37,7 +37,7 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params.require(:card).permit(:front_page, :back_page)
+    params.require(:card).permit(:front_page, :back_page, :photo)
   end
 
   def list_all_cards
