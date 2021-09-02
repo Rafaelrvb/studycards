@@ -9,8 +9,16 @@
 }
 
 .deck-item{
-  display: flex;
-  text-align: center;
+  display: flow-root;;
+  justify-content: space-between;
+  border: solid 2px #297F87;
+  border-radius: 8px;
+  margin-bottom: 3px;
+  margin-block-end: 3px;
+}
+
+.card-collection{
+  border: solid 2px #297F87;
   border: solid 2px #297F87;
   border-radius: 8px;
   margin-bottom: 3px;
