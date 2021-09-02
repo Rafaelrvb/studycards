@@ -8,5 +8,7 @@
   <h4>Button to add to my collection</h4>
   <div>
   <%= link_to "Add more cards", new_card_path(params[:id]) %>
+  <%= link_to "Add to my collection", addcollection_path(params[:id]) %>
+
   </div>
 </div>

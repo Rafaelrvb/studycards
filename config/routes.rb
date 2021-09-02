@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     patch '/cards/:id', to: 'cards#update', as: :update_card
     delete '/cards/:id', to: 'cards#destroy', as: :destroy_card
 
-  resources :deck_communities
+    resources :deck_communities, only: [:show,:destroy]
+    get '/deck_community/:id', to: 'deck_communities#create', as: :addcollection
 
 end

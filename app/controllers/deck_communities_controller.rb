@@ -23,7 +23,7 @@ class DeckCommunitiesController < ApplicationController
   def destroy
     @deck_community = DeckCommunity.find(params[:id])
     @deck_community.destroy
-    redirec_to collection_path(@deck_community.deck)
+    redirect_to deck_community_path(current_user)
   end
 
 
