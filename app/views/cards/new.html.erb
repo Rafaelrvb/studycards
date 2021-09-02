@@ -22,7 +22,7 @@
   </div>
   <hr>
   <div class="card-creator">
-    <%= simple_form_for @card, url: create_card_path(params[:id]) do |f| %>
+    <%= simple_form_for @card, url: create_card_path(params[:id]), remote: true do |f| %>
       <div class="row">
         <div class="col">
           <%= f.input :front_page, label: false, placeholder: 'Front' %>
@@ -33,6 +33,9 @@
       </div>
         <div class="text-center my-3">
           <%= f.button :submit, class: 'btn btn-primary' %>
+        </div>
+        <div>
+          <%= f.input :photo, as: :file %>
         </div>
     <% end %>
   </div>
