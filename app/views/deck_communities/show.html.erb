@@ -1,0 +1,9 @@
+<h1>my collection</h1>
+
+<% @deck_community.each do |decks| %>
+<div>
+<%= link_to "#{decks.deck.title}", show_path(decks.deck) %>
+<%= decks.deck.description %>
+<%= link_to "Delete from collection", decks, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</div>
