@@ -1,9 +1,30 @@
-<h1>my collection</h1>
+<div class="container text-center my-3">
 
-<% @deck_community.each do |decks| %>
-<div>
-<%= link_to "#{decks.deck.title}", show_path(decks.deck) %>
-<%= decks.deck.description %>
-<%= link_to "Delete from collection", decks, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
+  <div class="my-collection row d-flex justify-content-between">
+
+    <div class="list-collection col-6">
+      <h1>My collection</h1>
+      <% @deck_community.each do |decks| %>
+        <div class="deck-item">
+          <%= link_to "#{decks.deck.title}", show_path(decks.deck) %>
+          <div class="text-center "><%= link_to "", decks, method: :delete, data: { confirm: 'Are you sure?' }, class: "far fa-trash-alt" %></div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col ">
+      <div class="card-collection col">
+        <h1>Texto 1</h1>
+        <h2>Texto 2</h2>
+        <h3>texto 3</h3>
+      </div>
+      <div class="card-collection col">
+        <h1>Texto 1</h1>
+        <h2>Texto 2</h2>
+        <h3>texto 3</h3>
+      </div>
+    </div>
+
+  </div>
+
 </div>
