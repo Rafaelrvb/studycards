@@ -17,10 +17,26 @@
 }
 
 .middle-banner {
-  background-color: rgb(236, 230, 230);
+  background-color: rgb(252, 251, 251);
+  padding: 150px 0;
+  background-size: cover;
 }
 
 .middle-banner h1 {
-  padding-bottom: 50px ;
   color: black;
+  font-size: 60px;
+}
+
+.tird-banner{
+  background-color:#FFF7AE;
+  padding: 210px 0;
+  background-size: cover;
+  align-items: center;
+}
+
+.card-sample{
+  padding-left: 30px;
+}
+.items-div{
+  align-items: center;
 }

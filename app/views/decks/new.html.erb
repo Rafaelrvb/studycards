@@ -1,10 +1,17 @@
 <div class="container">
-  <h1>criar novo deck</h1>
-  <div>
-    <%= simple_form_for @deck, url: create_path do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-    <% end %>
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <div class="form-login">
+
+        <h1>Create new deck</h1>
+          <div>
+            <%= simple_form_for @deck, url: create_path do |f| %>
+            <%= f.input :title %>
+            <%= f.input :description %>
+            <%= f.button :submit, class: 'btn btn-info' %>
+            <% end %>
+          </div>
+      </div>
+    </div>
   </div>
 </div>
