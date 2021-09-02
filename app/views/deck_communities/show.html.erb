@@ -1,3 +1,4 @@
+
 <div class="container text-center my-3">
 
   <div class="my-collection row d-flex justify-content-between">
@@ -7,6 +8,7 @@
       <% @deck_community.each do |decks| %>
         <div class="deck-item">
           <%= link_to "#{decks.deck.title}", show_path(decks.deck) %>
+          <%= link_to "Study this deck", new_study_path(decks) %>
           <div class="text-center "><%= link_to "", decks, method: :delete, data: { confirm: 'Are you sure?' }, class: "far fa-trash-alt" %></div>
         </div>
       <% end %>
