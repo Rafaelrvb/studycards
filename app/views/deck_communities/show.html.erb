@@ -4,6 +4,7 @@
 <div>
 <%= link_to "#{decks.deck.title}", show_path(decks.deck) %>
 <%= decks.deck.description %>
+<%= link_to "Study this deck", new_study_path(decks) %>
 <%= link_to "Delete from collection", decks, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 </div>

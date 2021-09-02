@@ -1,0 +1,20 @@
+.card-front, .card-back {
+  width: 400px;
+  height: 300px;
+  padding: 16px;
+  background-color: white;
+  margin:auto;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  width: 400px;
+  margin:auto;
+  padding: 8px
+}
