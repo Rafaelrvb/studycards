@@ -22,7 +22,7 @@
   </div>
   <hr>
   <div class="card-creator">
-    <%= simple_form_for @card, url: create_card_path(params[:id]) do |f| %>
+    <%= simple_form_for @card, url: create_card_path(params[:id]), remote: true do |f| %>
       <div class="row">
         <div class="col">
           <%= f.input :front_page, label: false, placeholder: 'Front' %>
