@@ -1,21 +1,17 @@
 
 
 const showAnswer = () => {
-  let i = 0;
-  let card = document.getElementById(i);
-  card.classList.toggle("d-none")
+  const button = document.querySelector('#btn-show');
+  const question = document.getElementById('0');
+  const answer = document.getElementById('1');
+  const btns = document.getElementById('2')
 
-  const button = document.querySelector('#btn-show')
   button.addEventListener('click', (event) => {
-    card.classList.toggle("d-none")
-    i = i + 1
-    card = document.getElementById(i)
-    card.classList.toggle("d-none")
-    i = 0
+    question.classList.toggle("d-none")
+    answer.classList.toggle("d-none")
+    btns.classList.toggle("d-none")
 
   });
-
-
 };
 
 
