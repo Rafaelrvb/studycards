@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :deck_communities, only: [:show,:destroy]
     get '/deck_community/:id', to: 'deck_communities#create', as: :addcollection
 
-  # Routes for Study Controller:
+  # Routes for Studies Controller:
     get '/deck_community/:deck_community_id/studies/new', to: 'studies#new', as: :new_study
     post '/deck_community/:deck_community_id/studies/create', to: 'studies#create', as: :create_study
 
