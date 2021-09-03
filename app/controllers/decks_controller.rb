@@ -21,9 +21,12 @@ class DecksController < ApplicationController
   def create
     @deck = Deck.new(deck_params)
     @deck.user_id = current_user.id
-    @deck.save
-
-    redirect_to new_card_path(@deck.id)
+    if @deck.save
+      DeckCommunity.create(user_id: current_user.id, deck_id: @deck.id)
+      redirect_to new_card_path(@deck.id)
+    else
+      render :new
+    end
   end
 
   private
