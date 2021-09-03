@@ -1,8 +1,13 @@
 class StudiesController < ApplicationController
 
   def new
-    @deck_community = DeckCommunity.find(params[:deck_community_id])
-    @cards = @deck_community.deck.cards
+    if DeckCommunity.find(params[:deck_community_id]).user_id == current_user.id
+      @deck_community = DeckCommunity.find(params[:deck_community_id])
+      @cards = @deck_community.deck.cards
+    else
+      flash[:alert] = "You dont have this deck in your collection"
+      redirect_to deck_community_path(current_user)
+    end
   end
 
   def create
@@ -27,6 +32,8 @@ class StudiesController < ApplicationController
     end
 
   end
+
+
 
 
 
