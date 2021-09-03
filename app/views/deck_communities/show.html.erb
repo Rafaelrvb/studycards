@@ -6,9 +6,9 @@
     <div class="list-collection col-6">
       <h1>My collection</h1>
       <% @deck_community.each do |decks| %>
-        <div class="deck-item">
-          <%= link_to "#{decks.deck.title}", show_path(decks.deck) %>
-          <%= link_to "Study this deck", new_study_path(decks) %>
+        <div class="deck-item" style="display: grid; grid-template-columns: 1fr 1fr 1fr ">
+          <%= link_to "#{decks.deck.title}", show_path(decks.deck), class: "btn btn-info" %>
+          <%= link_to "Study this deck", new_study_path(decks), class: "btn btn-primary" %>
           <div class="text-center "><%= link_to "", decks, method: :delete, data: { confirm: 'Are you sure?' }, class: "far fa-trash-alt" %></div>
         </div>
       <% end %>
@@ -16,14 +16,14 @@
 
     <div class="col ">
       <div class="card-collection col">
-        <h1>Texto 1</h1>
-        <h2>Texto 2</h2>
-        <h3>texto 3</h3>
+        <h4>Deck </h4>
+        <h4>N° of cards:</h4>
+        <h4>Progress:</h4>
       </div>
       <div class="card-collection col">
-        <h1>Texto 1</h1>
-        <h2>Texto 2</h2>
-        <h3>texto 3</h3>
+        <h3>Dashboard</h3>
+        <h4>Deck:</h4>
+        <h4>Score:</h4>
       </div>
     </div>
 
