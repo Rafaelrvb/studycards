@@ -5,10 +5,19 @@
   <h3><%= @deck.description %></h3>
 
   <h4>Button to buy or try</h4>
+  <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
+    <%= link_to "Add to my collection", addcollection_path(params[:id]) %>
+  <% else %>
+    <%= link_to "View in my collection", addcollection_path(params[:id]) %>
+  <% end %>
   <h4>Button to add to my collection</h4>
   <div>
-  <%= link_to "Add more cards", new_card_path(params[:id]) %>
-  <%= link_to "Add to my collection", addcollection_path(params[:id]) %>
+
+  <% if current_user.id == @deck.user.id  %>
+    <%= link_to "Add more cards", new_card_path(params[:id]) %>
+  <% end %>
+
+
 
   </div>
 </div>
