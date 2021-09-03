@@ -27,11 +27,11 @@ import "bootstrap";
 
 
 // Internal imports, e.g:
-import { deckAsButton } from '../components/deck';
+import { showAnswer } from '../components/cards';
 
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  deckAsButton();
+  showAnswer();
 });
