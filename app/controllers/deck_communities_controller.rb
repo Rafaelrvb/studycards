@@ -12,6 +12,8 @@ class DeckCommunitiesController < ApplicationController
   def create
     @deck = Deck.find(params[:id])
     @deck_community = DeckCommunity.new(deck_id: @deck.id, user_id: current_user.id)
+    # if @deck_community.where(deck_id: @deck.id, user_id: current_user.id)
+
 
     if @deck_community.save
       redirect_to search_path
