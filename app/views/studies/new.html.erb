@@ -2,17 +2,17 @@
   <h2><%= @deck_community.deck.title %></h2>
   <div class="text-center">
     <div class="cartao card-front" id = "0" >
-      <p><%= @card.front_page %> - |@card id: <%= @card.id %>|</p>
+      <p><%= @card.front_page %></p>
     </div>
     <div class="cartao card-back d-none" id = "1" >
       <p><%= @card.back_page %></p>
     </div>
     <div class="cartao button-grid d-none" id = "2" >
-      <div class="btn-grid btn"><%= link_to "0%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 0 ), method: :post %></div>
-      <div class="btn-grid btn"><%= link_to "25%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 25 ), method: :post %></div>
-      <div class="btn-grid btn"><%= link_to "50%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 50 ), method: :post %></div>
-      <div class="btn-grid btn"><%= link_to "75%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 75 ), method: :post %></div>
-      <div class="btn-grid btn"><%= link_to "100%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 100 ), method: :post %></div>
+      <div class="btn-grid"><%= link_to "0%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 0 ), method: :post, class: "btn btn-danger" %></div>
+      <div class="btn-grid"><%= link_to "25%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 25 ), method: :post, class: "btn btn-danger" %></div>
+      <div class="btn-grid"><%= link_to "50%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 50 ), method: :post, class: "btn btn-info" %></div>
+      <div class="btn-grid"><%= link_to "75%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 75 ), method: :post, class: "btn btn-success" %></div>
+      <div class="btn-grid"><%= link_to "100%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 100 ), method: :post, class: "btn btn-success" %></div>
     </div>
     <div id="btn-show" class="btn btn-primary">
       Flip!
