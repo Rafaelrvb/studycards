@@ -8,6 +8,7 @@
             <%= simple_form_for @deck, url: create_path do |f| %>
             <%= f.input :title %>
             <%= f.input :description %>
+            <%= f.input :availability %> <--!caixa de seleção-->
             <%= f.button :submit, class: 'btn btn-info' %>
             <% end %>
           </div>
