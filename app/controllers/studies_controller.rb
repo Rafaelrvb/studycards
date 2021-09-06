@@ -7,7 +7,7 @@ class StudiesController < ApplicationController
 
       # creating a session of user progress
       if @deck_community.user_progress.nil?
-        @session = UserProgress.create(deck_community_id: @deck_community.id, sessions: 1)
+        @session = UserProgress.create(deck_community_id: @deck_community.id, sessions: 0)
       else
         @session = @deck_community.user_progress
       end
