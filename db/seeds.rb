@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
+require 'json'
+require 'open-uri'
+require "base64"
 
 puts "cleaning the database"
 Card.destroy_all
@@ -23,7 +26,7 @@ user = User.new(
 user.save!
 puts "#{user.id} - #{user.name} created"
 
-10.times do
+30.times do
   user = User.new(
     nickname: Faker::Internet.user_name,
     email: Faker::Internet.email,
@@ -33,24 +36,33 @@ puts "#{user.id} - #{user.name} created"
   user.save
   puts "#{user.id} - #{user.name} created"
 
-  5.times do
-    deck = Deck.new(
-      title: Faker::Movie.title,
-      description: Faker::Movie.quote,
-      user_id: user.id
+  # seeding with Trivia API:
+
+  amount = rand(30..50)
+  category = [9,10,11,12,14,15,16,17,18].sample
+  url = "https://opentdb.com/api.php?amount=#{amount}&category=#{category}&type=multiple&encode=base64"
+  read_api = URI.open(url).read
+  trivia = JSON.parse(read_api)
+
+  deck = Deck.new(
+    title: Base64.decode64(trivia['results'][0]['category']),
+    description: "Trivia about #{Base64.decode64(trivia['results'][0]['category'])} with #{amount-1} questions!",
+    user_id: user.id
+  )
+  deck.save
+  puts "#{deck.id} - #{deck.title} created"
+
+  i = 0
+  (amount-1).times do
+    card = Card.new(
+      front_page: Base64.decode64(trivia['results'][i]['question']),
+      back_page: Base64.decode64(trivia['results'][i]['correct_answer']),
+      deck_id: deck.id
     )
-    deck.save
-    puts "#{deck.id} - #{deck.title} created"
-
-    5.times do
-      card = Card.new(
-        front_page: "Ask?",
-        back_page: Faker::ChuckNorris.fact,
-        deck_id: deck.id
-      )
-      card.save
-      puts "Card #{card.id} created"
-    end
-
+    i += 1
+    card.save
+    puts "#{i} Card #{card.id}-> Q:#{Base64.decode64(trivia['results'][i]['question'])} - A:#{Base64.decode64(trivia['results'][i]['correct_answer'])} created"
   end
+  puts "#{amount} cards expected and #{i} created"
+
 end

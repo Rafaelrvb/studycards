@@ -29,9 +29,9 @@ import "bootstrap";
 // Internal imports, e.g:
 import { showAnswer } from '../components/cards';
 
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   showAnswer();
+
 });

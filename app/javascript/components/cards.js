@@ -8,6 +8,7 @@ const showAnswer = () => {
 
   button.addEventListener('click', (event) => {
     question.classList.toggle("d-none")
+
     answer.classList.toggle("d-none")
     btns.classList.toggle("d-none")
 
