@@ -59,17 +59,19 @@
      <div class="text-center">
         <h1>How it works?</h1>
      </div>
-    <div class="d-flex align-items-center container justify-content-around">
-        <div class= "middle-gif card-sample">
-          <iframe src="https://giphy.com/embed/IPbS5R4fSUl5S" width="384" height="213" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
+
+    <%# <div class="d-flex align-items-center container justify-content-around"> %>
+    <div class="d-flex container">
+        <div class= "middle-gif card-sample wrapper">
+          <iframe id="slide" src="https://giphy.com/embed/IPbS5R4fSUl5S" width="384" height="213" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
         </div>
 
-        <div>
-          <h3>Using the space repetition technik</h3>
-          <h3>You can learn anything</h3>
-          <h3>In record time!</h3>
-          <div>
-          <%= link_to 'Try it now!', search_path, class: 'btn btn-primary btn-lg mt-5' %>
+        <div class="wrapper2">
+         <div id="slide2">
+            <h3>Using the space repetition technik</h3>
+            <h3>You can learn anything</h3>
+            <h3>In record time!</h3>
+            <%= link_to 'Try it now!', search_path, class: 'btn btn-primary btn-lg mt-5' %>
           </div>
         </div>
     </div>
