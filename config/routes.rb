@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -22,6 +23,12 @@ Rails.application.routes.draw do
     get '/deck_community/:deck_community_id/studies/new', to: 'studies#new', as: :new_study
     post '/deck_community/:deck_community_id/studies/create', to: 'studies#create', as: :create_study
 
+  # Routes for Reviews
+  get '/decks/:id/deck_reviews/new', to: 'deck_reviews#new', as: :new_deck_review
+  post '/decks/:id/deck_reviews', to: 'deck_reviews#create', as: :deck_reviews
+  get '/deck_reviews/:id/edit', to: 'deck_reviews#edit', as: :edit_deck_review
+  patch '/deck_reviews/:id', to: 'deck_reviews#update', as: :update_review
+  delete '/deck_reviews/:id/destroy', to: 'deck_reviews#destroy', as: :destroy_review
 
 
 end

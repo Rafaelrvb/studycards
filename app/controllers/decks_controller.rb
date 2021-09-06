@@ -11,6 +11,8 @@ class DecksController < ApplicationController
 
   def show # /decks/:id
     @deck = Deck.find(params[:id])
+    @review = DeckReview.find_by(user: current_user)
+    @reviews = DeckReview.where(deck_id: params[:id])
   end
 
   def new # /decks/new
