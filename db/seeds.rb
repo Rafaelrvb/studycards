@@ -26,7 +26,7 @@ user = User.new(
 user.save!
 puts "#{user.id} - #{user.name} created"
 
-30.times do
+70.times do
   user = User.new(
     nickname: Faker::Internet.user_name,
     email: Faker::Internet.email,
@@ -38,8 +38,8 @@ puts "#{user.id} - #{user.name} created"
 
   # seeding with Trivia API:
 
-  amount = rand(30..50)
-  category = [9,10,11,12,14,15,16,17,18].sample
+  amount = rand(20..50)
+  category = [9,10,11,12,14,15,16,17,18,21,22,23,27,28,29,31,32].sample
   url = "https://opentdb.com/api.php?amount=#{amount}&category=#{category}&type=multiple&encode=base64"
   read_api = URI.open(url).read
   trivia = JSON.parse(read_api)
