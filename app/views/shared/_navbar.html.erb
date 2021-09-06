@@ -36,7 +36,7 @@
           <%= link_to "My Collection", deck_community_path(current_user), class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "My Marketplace", "#", class: "nav-link" %>
+          <%= link_to "My Marketplace", marketplace_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% if current_user.profile_pic.attached? %>
