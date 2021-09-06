@@ -1,6 +1,15 @@
 <div class="container">
   <h2><%= @deck_community.deck.title %></h2>
+  <div>
+    <%= link_to "Back to My Collections", deck_community_path(current_user), class: "btn btn-sm btn-info" %>
+  </div>
   <div class="text-center">
+    <div class="headers">
+      <% cards = @deck_community.deck.cards %>
+      <p><%= cards.find_index(@card) + 1 %> of <%= cards.count %></p>
+      <p>Session: <%= @session.sessions %></p>
+      <p>Time: 00:00</p>
+    </div>
     <div class="cartao card-front" id = "0" >
       <p><%= @card.front_page %></p>
     </div>
@@ -8,14 +17,15 @@
       <p><%= @card.back_page %></p>
     </div>
     <div class="cartao button-grid d-none" id = "2" >
-      <div class="btn-grid"><%= link_to "0%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 0 ), method: :post, class: "btn btn-danger" %></div>
-      <div class="btn-grid"><%= link_to "25%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 25 ), method: :post, class: "btn btn-danger" %></div>
-      <div class="btn-grid"><%= link_to "50%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 50 ), method: :post, class: "btn btn-info" %></div>
-      <div class="btn-grid"><%= link_to "75%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 75 ), method: :post, class: "btn btn-success" %></div>
-      <div class="btn-grid"><%= link_to "100%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 100 ), method: :post, class: "btn btn-success" %></div>
+      <div class="btn-grid"><%= link_to "0%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 0, session: @session ), method: :post, class: "btn btn-danger" %></div>
+      <div class="btn-grid"><%= link_to "25%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 25, session: @session ), method: :post, class: "btn btn-danger" %></div>
+      <div class="btn-grid"><%= link_to "50%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 50, session: @session ), method: :post, class: "btn btn-info" %></div>
+      <div class="btn-grid"><%= link_to "75%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 75, session: @session ), method: :post, class: "btn btn-success" %></div>
+      <div class="btn-grid"><%= link_to "100%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 100, session: @session ), method: :post, class: "btn btn-success" %></div>
     </div>
     <div id="btn-show" class="btn btn-primary">
       Flip!
     </div>
+
   </div>
 </div>

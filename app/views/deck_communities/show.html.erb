@@ -13,19 +13,11 @@
         </div>
       <% end %>
     </div>
-
-    <div class="col ">
-      <div class="card-collection col">
-        <h4>Deck </h4>
-        <h4>N° of cards:</h4>
-        <h4>Progress:</h4>
-      </div>
-      <div class="card-collection col">
-        <h3>Dashboard</h3>
-        <h4>Deck:</h4>
-        <h4>Score:</h4>
-      </div>
-    </div>
+    <% unless @deck_community.empty? %>
+      <% unless @deck_community[0].user_progress.nil? %>
+        <%= render 'dashboard'  %>
+      <% end %>
+    <% end %>
 
   </div>
 
