@@ -14,6 +14,7 @@
           <% if current_user.id == @deck.user.id  %>
             <%= link_to "Add more cards", new_card_path(params[:id]), class: "btn btn-info" %>
           <% end %>
+          <%= link_to "Add review", new_deck_review_path, class: "btn btn-info" %>
         </div>
       </div>
     </div>
