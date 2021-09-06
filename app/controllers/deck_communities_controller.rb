@@ -4,18 +4,13 @@ class DeckCommunitiesController < ApplicationController
 
   def show
     @deck_community = DeckCommunity.where(user: current_user)
-
     unless @deck_community.empty?
       unless study_info(@deck_community[0])[0].nil?
         @study_info = study_info(@deck_community[0])
         @score = score(@study_info).round(2) * 100
         @cards_done = @study_info.select {|study| study.repetition > 0}.count
-
       end
-
     end
-
-
   end
 
   def new
@@ -38,6 +33,15 @@ class DeckCommunitiesController < ApplicationController
     redirect_to deck_community_path(current_user)
   end
 
+  def market
+    deck_community = DeckCommunity.where(user: current_user)
+    @my_deck_market = deck_community.select do |deckcomm|
+      deckcomm.deck.user_id == current_user.id && deckcomm.deck.availability == 'Commercial'
+    end
+
+
+  end
+
   private
 
   def study_info(deckcomm)
@@ -46,7 +50,6 @@ class DeckCommunitiesController < ApplicationController
       return nil
     end
     # selecting the deck which we want study infos
-
     deck = Deck.find(deckcomm.deck_id)
 
     # creating array of card's info which contains card_id, reps and grade
@@ -59,7 +62,6 @@ class DeckCommunitiesController < ApplicationController
 
   def score(cards_info)
     # selecting all cards that have been done at least once
-
     cards_info.reject! do |card_study|
       card_study.nil?
     end
@@ -73,8 +75,6 @@ class DeckCommunitiesController < ApplicationController
     end
 
     return total_grade / total_reps
-
-
   end
 
 

@@ -1,0 +1,15 @@
+<div class="col ">
+  <div class="card-collection col">
+    <div class="row d-flex" style="justify-content:space-around">
+      <div><p>Deck: <%= @my_deck_market[0].deck.title %> </p></div>
+    </div>
+    <div class="row d-flex" style="justify-content:center">
+      <div style="text-align: justify">
+        <p>Total times sold: <%= DeckCommunity.where(deck_id: @my_deck_market[0].deck).count %></p>
+        <p>Mean price paid: $<%= 40 %></p>
+        <p>Total earnings: <%= DeckCommunity.where(deck_id: @my_deck_market[0].deck).count * 40 * 0.9 %> </p>
+        <p>Last buyer: <%= User.find(DeckCommunity.where(deck_id: @my_deck_market[0].deck).last.user_id).name %></p>
+      </div>
+    </div>
+
+</div>

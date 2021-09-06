@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get '/search', to: 'decks#index'
+  get '/my_marketplace', to: 'deck_communities#market', as: :marketplace
 
   get '/decks/new', to: 'decks#new', as: :new
   post '/decks/create', to: 'decks#create', as: :create

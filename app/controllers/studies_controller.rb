@@ -74,11 +74,9 @@ class StudiesController < ApplicationController
     end
 
 
+
+
   end
-
-
-
-
 
 
 end
