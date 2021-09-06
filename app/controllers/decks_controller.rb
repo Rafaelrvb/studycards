@@ -32,7 +32,7 @@ class DecksController < ApplicationController
   private
 
   def deck_params
-    params.require(:deck).permit(:title, :description)
+    params.require(:deck).permit(:title, :description, :availability)
   end
 
 
