@@ -4,6 +4,7 @@ class DeckCommunitiesController < ApplicationController
 
   def show
     @deck_community = DeckCommunity.where(user: current_user)
+
     unless @deck_community.empty?
       unless study_info(@deck_community[0])[0].nil?
         @study_info = study_info(@deck_community[0])
@@ -11,6 +12,7 @@ class DeckCommunitiesController < ApplicationController
         @cards_done = @study_info.select {|study| study.repetition > 0}.count
 
       end
+
     end
 
 
