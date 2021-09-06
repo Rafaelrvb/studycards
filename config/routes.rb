@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   post '/decks/:id/deck_reviews', to: 'deck_reviews#create', as: :deck_reviews
   get '/deck_reviews/:id/edit', to: 'deck_reviews#edit', as: :edit_deck_review
   patch '/deck_reviews/:id', to: 'deck_reviews#update', as: :update_review
-  # get 'deck_reviews/destroy'
+  delete '/deck_reviews/:id/destroy', to: 'deck_reviews#destroy', as: :destroy_review
 
 
 end

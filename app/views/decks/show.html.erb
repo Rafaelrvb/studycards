@@ -26,6 +26,7 @@
           <%= "#{review.user.name}:" %>
           <%= review.review_content %>
           <%= "⭐"*review.rating %>
+          <div class="text-center "><%= link_to "", destroy_review_path(review.id),method: :delete, class: "far fa-trash-alt" %></div>
           </div>
           <% end %>
         </div>

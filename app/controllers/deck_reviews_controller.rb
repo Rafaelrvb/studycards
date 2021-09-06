@@ -20,12 +20,16 @@ class DeckReviewsController < ApplicationController
   end
 
   def update
-    @review = DeckReview.find(params[:id])
+
     @review.update(review_params)
     redirect_to show_path(@review.deck)
   end
 
   def destroy
+    @review = DeckReview.find(params[:id])
+    @review.destroy
+
+    redirect_to show_path(@review.deck)
   end
 
   private
