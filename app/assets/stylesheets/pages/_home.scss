@@ -1,47 +1,41 @@
 .carousel-item{
-
   background-size: cover;
   background-position: center;
-  padding: 200px 0;
 }
 
 .carousel-item h1 {
-  color: white;
+  color: rgb(3, 3, 3);
   font-size: 80px;
+  font-weight: bold;
 }
 
 .carousel-item p {
-  color: white;
+  color: rgb(19, 18, 18);
   opacity: .7;
   font-size: 20px;
 }
 
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 200px 0;
+.carousel-caption{
+  position: absolute;
+  bottom: 30%;
+  left: 5%;
+  color: white;
 }
 
-.banner h1 {
-  color: white;
-  font-size: 80px;
-}
-
-.banner p {
-  color: white;
-  opacity: .7;
-  font-size: 20px;
+.carousel-caption h1,p{
+  padding-right: 300px;
 }
 
 .middle-banner {
   background-color: rgb(252, 251, 251);
-  padding: 150px 0;
+  padding: 100px 0;
   background-size: cover;
 }
 
 .middle-banner h1 {
   color: black;
   font-size: 60px;
+  margin-bottom: 110px;
 }
 
 .tird-banner{
