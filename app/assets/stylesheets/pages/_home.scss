@@ -1,4 +1,21 @@
-// Specific CSS for your home-page
+.carousel-item{
+
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+}
+
+.carousel-item h1 {
+  color: white;
+  font-size: 80px;
+}
+
+.carousel-item p {
+  color: white;
+  opacity: .7;
+  font-size: 20px;
+}
+
 .banner {
   background-size: cover;
   background-position: center;

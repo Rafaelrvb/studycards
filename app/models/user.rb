@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :studies, dependent: :destroy
 
-  has_one_attached :photo
+  has_one_attached :profile_pic
 
   validates :name, presence: true
 
