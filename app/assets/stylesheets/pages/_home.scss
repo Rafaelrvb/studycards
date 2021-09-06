@@ -7,12 +7,14 @@
   color: rgb(3, 3, 3);
   font-size: 80px;
   font-weight: bold;
+  padding-right: 300px;
 }
 
 .carousel-item > p {
   color: rgb(19, 18, 18);
   opacity: .7;
   font-size: 20px;
+  padding-right: 300px;
 }
 
 .carousel-caption{
@@ -22,11 +24,7 @@
   color: white;
 }
 
-.carousel-caption {
-  h1, p {
-    padding-right: 300px;
-  }
-}
+
 
 .middle-banner {
   background-color: rgb(252, 251, 251);
