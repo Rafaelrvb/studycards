@@ -23,7 +23,16 @@
           5090 users
         </div>
         <div>
-          ⭐⭐⭐⭐
+          <% rating = 0 %>
+          <% deck.deck_reviews.each do |review|  %>
+            <% rating += review.rating %>
+          <% end %>
+          <% if deck.deck_reviews.empty?%>
+          --
+          <% else %>
+            <%= "⭐"*(rating/deck.deck_reviews.count) %>
+          <% end %>
+
         </div>
       </div>
   <% end %>
