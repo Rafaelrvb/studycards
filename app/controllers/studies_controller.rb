@@ -1,11 +1,22 @@
 class StudiesController < ApplicationController
 
   def new
+    # selecting deck community if it exists for that user
     if DeckCommunity.find(params[:deck_community_id]).user_id == current_user.id
       @deck_community = DeckCommunity.find(params[:deck_community_id])
-      cards = @deck_community.deck.cards # array of all cards, needs to change to array of selected cards for the day
 
-      if params[:next_card] # next_card implies that the user have already started studing, otherwise is nil
+      # creating a session of user progress
+      if @deck_community.user_progress.nil?
+        @session = UserProgress.create(deck_community_id: @deck_community.id, sessions: 1)
+      else
+        @session = @deck_community.user_progress
+      end
+
+      # creating array of cards to be studied
+      cards = @deck_community.deck.cards
+
+      # next_card implies that the user have already started studing, otherwise is nil
+      if params[:next_card]
         @card = cards[params[:next_card].to_i]
       else
         @card = cards[0]
@@ -17,7 +28,9 @@ class StudiesController < ApplicationController
     end
   end
 
-  def create
+  def create # should be renamed method 'study'
+
+    # logic for grading the specific studied card and grabbing the next one to be studied
     @deck_community = DeckCommunity.find(params[:deck_community_id])
     cards = @deck_community.deck.cards
     card = cards.find(params[:card_id])
@@ -25,12 +38,17 @@ class StudiesController < ApplicationController
     @next_card = card_position_in_array + 1
     difficulty = params[:grade].to_i/100.0
 
+    # verifying if the card was already studied before
     if Study.where(card_id: card).empty?
       @study = Study.new(user_id: current_user.id, card_id: card.id, grade: difficulty)
       @study.save
 
+      # redirecting user after completion of a study session
       if @next_card == cards.length
         flash[:alert] = "Congratulations, you've finished this study session!"
+        session = UserProgress.find(params[:session])
+        session.sessions += 1
+        session.save
         redirect_to deck_community_path(current_user)
       else
         redirect_to new_study_path(deck_community_id: @deck_community.id, next_card: @next_card)
@@ -43,16 +61,17 @@ class StudiesController < ApplicationController
       @study[0].grade = grade
       @study[0].save
 
+      # redirecting user after completion of a study session
       if @next_card == cards.length
         flash[:alert] = "Congratulations, you've finished this study session!"
+        session = UserProgress.find(params[:session])
+        session.sessions += 1
+        session.save
         redirect_to deck_community_path(current_user)
       else
         redirect_to new_study_path(deck_community_id: @deck_community.id, next_card: @next_card)
       end
     end
-
-
-
 
 
   end

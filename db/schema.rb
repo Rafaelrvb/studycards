@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_130606) do
+
+ActiveRecord::Schema.define(version: 2021_09_06_141329) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +87,15 @@ ActiveRecord::Schema.define(version: 2021_09_06_130606) do
     t.index ["user_id"], name: "index_studies_on_user_id"
   end
 
+  create_table "user_progresses", force: :cascade do |t|
+    t.bigint "deck_community_id", null: false
+    t.integer "sessions"
+    t.integer "cards_per_session"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["deck_community_id"], name: "index_user_progresses_on_deck_community_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -107,4 +118,5 @@ ActiveRecord::Schema.define(version: 2021_09_06_130606) do
   add_foreign_key "deck_reviews", "users"
   add_foreign_key "decks", "users"
   add_foreign_key "studies", "users"
+  add_foreign_key "user_progresses", "deck_communities"
 end
