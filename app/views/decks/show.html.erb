@@ -14,7 +14,20 @@
           <% if current_user.id == @deck.user.id  %>
             <%= link_to "Add more cards", new_card_path(params[:id]), class: "btn btn-info" %>
           <% end %>
+          <% if DeckReview.where(user_id: current_user.id, deck_id: @deck.id).empty? %>
           <%= link_to "Add review", new_deck_review_path, class: "btn btn-info" %>
+          <% else %>
+          <%= link_to "Edit review", edit_deck_review_path(@review), class: "btn btn-info" %>
+          <% end %>
+        </div>
+        <div>
+          <% @reviews.each do |review| %>
+          <div class="card">
+          <%= "#{review.user.name}:" %>
+          <%= review.review_content %>
+          <%= "⭐"*review.rating %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>

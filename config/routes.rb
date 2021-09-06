@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   # Routes for Reviews
   get '/decks/:id/deck_reviews/new', to: 'deck_reviews#new', as: :new_deck_review
   post '/decks/:id/deck_reviews', to: 'deck_reviews#create', as: :deck_reviews
-  get 'deck_reviews/destroy'
+  get '/deck_reviews/:id/edit', to: 'deck_reviews#edit', as: :edit_deck_review
+  patch '/deck_reviews/:id', to: 'deck_reviews#update', as: :update_review
+  # get 'deck_reviews/destroy'
+
 
 end

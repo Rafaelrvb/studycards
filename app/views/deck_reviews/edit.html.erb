@@ -1,0 +1,5 @@
+<%= simple_form_for @review, url: {action: "update"} do |f| %>
+  <%= f.input :review_content %>
+  <%= f.input :rating %>
+  <%= f.submit %>
+<% end %>
