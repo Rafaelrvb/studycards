@@ -9,32 +9,37 @@
   </div>
 
   <% @decks.each do |deck| %>
-    <div class="deck">
-        <div style="border-right: solid 1px; overflow: hidden">
-          <%= link_to "#{deck.title}", show_path(deck) %>
-        </div>
-        <div>
-          <%= User.find(deck.user_id).name %>
-        </div>
-        <div>
-          <%= Card.where(deck_id: deck.id).count %>
-        </div>
-        <div>
-          5090 users
-        </div>
-        <div>
-          <% rating = 0 %>
-          <% deck.deck_reviews.each do |review|  %>
-            <% rating += review.rating %>
-          <% end %>
-          <% if deck.deck_reviews.empty?%>
-          --
-          <% else %>
-            <%= "⭐"*(rating/deck.deck_reviews.count) %>
-          <% end %>
+    <div class="card-product">
+      <img src="https://images-platform.99static.com//yMu615t0H7ZoE7NAZn48S48DZGY=/350x309:851x810/fit-in/590x590/99designs-contests-attachments/90/90852/attachment_90852898" />
+        <div class="card-product-infos">
+          <div >
+            <%= link_to "#{deck.title}", show_path(deck) %>
+          </div>
 
+          <div style="padding-left: 10px">
+            <%= User.find(deck.user_id).name %>
+          </div>
+
+          <div style="padding-left: 10px">
+            <%= Card.where(deck_id: deck.id).count %>
+          </div>
+
+          <div style="padding-left: 10px">
+            5090 users
+          </div>
+
+          <div style="padding-left: 70px">
+            <% rating = 0 %>
+            <% deck.deck_reviews.each do |review|  %>
+              <% rating += review.rating %>
+            <% end %>
+            <% if deck.deck_reviews.empty?%>
+            --
+            <% else %>
+              <%= "⭐"*(rating/deck.deck_reviews.count) %>
+            <% end %>
+          </div>
         </div>
-      </div>
+    </div>
   <% end %>
-
 </div>
