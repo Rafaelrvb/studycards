@@ -6,7 +6,16 @@
       <% @deck_community.each do |decks| %>
         <div class="deck-item">
           <% var += 1  %>
-          <%= link_to "#{decks.deck.title} (#{decks.deck.availability})", deck_community_path(user_id: current_user.id, var: var), class: "btn btn-info" %>
+
+          <%= link_to "#{decks.deck.title} (#{decks.deck.availability})", show_path(decks.deck), class: "btn btn-info" %>
+          <% if decks.deck.availability == "Commercial" %>
+            <div><%= "Pending payment" %></div>
+          <% else %>
+            <%= link_to "Study this deck", new_study_path(decks), class: "btn btn-primary" %>
+          <% end %>
+          <%= link_to "dash", deck_community_path(user_id: current_user.id, var: var) %>
+          <div class="text-center "><%= link_to "", decks, method: :delete, data: { confirm: 'Are you sure?' }, class: "far fa-trash-alt" %></div>
+
         </div>
       <% end %>
     </div>
