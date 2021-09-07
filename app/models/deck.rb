@@ -4,7 +4,7 @@ class Deck < ApplicationRecord
   has_many :deck_communities, dependent: :destroy
   has_many :deck_reviews, dependent: :destroy
 
-  has_one_attached :profile_pic
+  has_one_attached :deck_pic
 
   validates :title, presence: true, length: { minimum: 3 }
   validates :description, length: { minimum: 6 }
