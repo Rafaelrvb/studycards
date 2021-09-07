@@ -7,7 +7,11 @@
           <h4>Description: <%= @deck.description %></h4>
         <div>
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
-            <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn btn-info" %>
+            <%if @deck.availability == "Public"%>
+              <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn btn-info" %>
+            <% else %>
+              <%= link_to "Add to card", addcollection_path(params[:id]), class: "btn btn-info" %>
+            <% end %>
           <% else %>
             <%= link_to "View in my collection", deck_community_path(current_user), class: "btn btn-info" %>
             <% if DeckReview.where(user_id: current_user.id, deck_id: @deck.id).empty? %>
