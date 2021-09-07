@@ -1,7 +1,12 @@
 <div class="container">
 
-  <div class="profile-img p-3 text-center">
-  profile pic
+  <div>
+    <% if current_user.profile_pic.attached? %>
+      <% #cloudinary image, transformation, css configs %>
+      <%= cl_image_tag(current_user.profile_pic.key)%>
+    <% else %>
+      <%= cl_image_tag("qti4i6jfeifalznnivpuptdxa9hk")%>
+    <% end %>
   </div>
 
   <div class="profile-info my-3">

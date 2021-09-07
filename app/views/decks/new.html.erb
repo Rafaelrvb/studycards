@@ -9,6 +9,7 @@
             <%= f.input :title %>
             <%= f.input :description %>
             <%= f.input :availability, as: :radio_buttons, collection: ["Public","Private", "Commercial"], include_hidden: false %>
+            <%= f.input :deck_pic, as: :file %>
             <%= f.button :submit, class: 'btn btn-info' %>
             <% end %>
           </div>
