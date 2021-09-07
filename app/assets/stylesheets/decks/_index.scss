@@ -15,12 +15,16 @@
   align-content: center;
   border: solid 2px #297F87;
   border-radius: 8px;
-  margin: 8px;
+  margin-bottom: 3px;
   &:hover {
-    box-shadow: 2px 2px 16px #297F87;
-    margin: 8px -8px;
+    color: white;
+    background-color: #297F87;
+
   }
 
+  &:hover a {
+    color: white;
+  }
 
 }
 

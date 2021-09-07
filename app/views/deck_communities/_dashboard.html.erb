@@ -1,23 +1,19 @@
-  <div class="card-collection col">
-    <div id="deck-info-dashboard" class="row">
-      <div>Deck: <strong><%= @deck_community[var.to_i].deck.title%></strong></div>
-      <div>Author: <%= User.find(@deck_community[var.to_i].deck.user_id).name %></div>
-      <div>N° of cards: <%= @deck_community[var.to_i].deck.cards.count%></div>
-    </div>
 
-    <div id="deck-session-dashboard" class="row">
-    <% unless @deck_community[params[:var].to_i].user_progress.nil? %>
+  <div class="card-collection col">
+    <div class="row d-flex" style="justify-content:space-around">
+      <div><p>Deck: <strong><%= @deck_community[var.to_i].deck.title%></strong> </p></div>
+      <div><p>N° of cards: <%= @deck_community[var.to_i].deck.cards.count%></p></div>
+    </div>
+    <div class="row d-flex" style="justify-content:center">
       <div style="text-align: justify">
         <p>Sessions completed: <%= @deck_community[var.to_i].user_progress.sessions%></p>
         <p>Cards completed: <%= @cards_done %> / <%=@deck_community[var.to_i].deck.cards.count%></p>
         <p>Total score: <%= @score.to_i%>%</p>
       </div>
-    <% end %>
-      <div id="btns">
-        <div><%= link_to "Study", new_study_path(@deck_community[var.to_i]), class: "btn btn-success" %></div>
-        <div><%= link_to "Deck Info", new_study_path(@deck_community[var.to_i]), class: "btn btn-info" %></div>
-        <div><%= link_to "", deck_community_path(@deck_community[var.to_i]), method: :delete, data: { confirm: 'Are you sure?' }, class: "far fa-trash-alt" %></div>
-      </div>
     </div>
-
-  </div>
+    </div>
+      <div class="card-collection col">
+        <h3><%= var.to_i %></h3>
+        <h4>Deck:</h4>
+        <h4>Score:</h4>
+      </div>
