@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/decks/new', to: 'decks#new', as: :new
   post '/decks/create', to: 'decks#create', as: :create
   get '/decks/:id', to: 'decks#show', as: :show
+  patch '/decks/:id', to: 'decks#update', as: :update_deck
 
     # These routes are nested in decks id
     get '/decks/:id/cards/new', to: 'cards#new', as: :new_card
