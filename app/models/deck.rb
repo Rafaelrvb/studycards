@@ -10,8 +10,8 @@ class Deck < ApplicationRecord
   validates :availability, inclusion: {in: ["Public","Private", "Commercial"]}
 
   include PgSearch::Model
-  pg_search_scope :search_by_title,
-    against: [:title],
+  pg_search_scope :search_by_title_description,
+    against: [:title, :description],
     using: {
       tsearch: { prefix: true }
     }
