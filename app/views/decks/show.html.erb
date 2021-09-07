@@ -7,17 +7,21 @@
           <h4>Description: <%= @deck.description %></h4>
         <div>
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
-            <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn btn-info" %>
+            <%if @deck.availability == "Public"%>
+              <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn btn-info" %>
+            <% else %>
+              <%= link_to "Add to Shopcard", addcollection_path(params[:id]), class: "btn btn-info" %>
+            <% end %>
           <% else %>
             <%= link_to "View in my collection", deck_community_path(current_user), class: "btn btn-info" %>
+            <% if DeckReview.where(user_id: current_user.id, deck_id: @deck.id).empty? %>
+              <%= link_to "Add review", new_deck_review_path, class: "btn btn-info" %>
+            <% else %>
+              <%= link_to "Edit review", edit_deck_review_path(@review), class: "btn btn-info" %>
+            <% end %>
           <% end %>
           <% if current_user.id == @deck.user.id  %>
             <%= link_to "Add more cards", new_card_path(params[:id]), class: "btn btn-info" %>
-          <% end %>
-          <% if DeckReview.where(user_id: current_user.id, deck_id: @deck.id).empty? %>
-          <%= link_to "Add review", new_deck_review_path, class: "btn btn-info" %>
-          <% else %>
-          <%= link_to "Edit review", edit_deck_review_path(@review), class: "btn btn-info" %>
           <% end %>
         </div>
         <div>
