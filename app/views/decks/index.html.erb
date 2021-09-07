@@ -10,6 +10,7 @@
 
 
   <% @decks.each do |deck| %>
+  <% unless deck.availability == "Private"%>
     <div class="deck">
         <div style="border-right: solid 1px; overflow: hidden">
           <%= link_to "#{deck.title}", show_path(deck) %>
@@ -36,6 +37,7 @@
 
         </div>
       </div>
+  <% end %>
   <% end %>
 
 </div>
