@@ -21,6 +21,7 @@
     -webkit-animation-delay: 1s;
     animation: slide 0.8s forwards;
     animation-delay: 1s;
+
 }
 
 @-webkit-keyframes slide {
@@ -40,4 +41,6 @@
     -webkit-animation-delay: 1s;
     animation: slide 0.9s forwards;
     animation-delay: 1s;
+    padding: 24px;
+    margin-top: 40px;
 }
