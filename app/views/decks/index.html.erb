@@ -1,7 +1,8 @@
 <div class="container text-center my-3">
   <h3 id="search-header"><%= @decks.count %> decks matches your search!</h3>
   <div class="deck-header">
-    <div>Deck</div>
+    <div>Deck/</div>
+    <div>Price</div>
     <div>Creator</div>
     <div>N° of cards</div>
     <div>Users</div>
@@ -12,6 +13,13 @@
     <div class="deck">
         <div style="border-right: solid 1px; overflow: hidden">
           <%= link_to "#{deck.title}", show_path(deck) %>
+        </div>
+        <div>
+          <% if deck.availability == "Commercial" %>
+            <%= "U$ 10,00"%>
+          <% else %>
+            <%= "Free" %>
+          <% end %>
         </div>
         <div>
           <%= User.find(deck.user_id).name %>
