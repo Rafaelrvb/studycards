@@ -1,51 +1,9 @@
-<div class="container text-center my-3">
-  <h3 id="search-header"><%= @decks.count %> decks matches your search!</h3>
-  <div class="deck-header">
-    <div>Deck</div>
-    <div>Price</div>
-    <div>Creator</div>
-    <div>N° of cards</div>
-    <div>Users</div>
-    <div>Rating</div>
-  </div>
 
 
-  <% @decks.each do |deck| %>
-  <% unless deck.availability == "Private"%>
-    <div class="deck">
-        <div style="border-right: solid 1px; overflow: hidden">
-          <%= link_to "#{deck.title}", show_path(deck) %>
-        </div>
-        <div>
-          <% if deck.availability == "Commercial" %>
-            <p>$<%= deck.price %></p>
-          <% else %>
-            <p>Free</p>
-          <% end %>
-        </div>
-        <div>
-          <%= User.find(deck.user_id).name %>
-        </div>
-        <div>
-          <%= Card.where(deck_id: deck.id).count %>
-        </div>
-        <div>
-          5090 users
-        </div>
-        <div>
-          <% rating = 0 %>
-          <% deck.deck_reviews.each do |review|  %>
-            <% rating += review.rating %>
-          <% end %>
-          <% if deck.deck_reviews.empty?%>
-          --
-          <% else %>
-            <%= "⭐"*(rating/deck.deck_reviews.count) %>
-          <% end %>
 
-        </div>
-      </div>
-  <% end %>
-  <% end %>
+<% if @decks.nil? %>
+  <%= render 'categories' %>
+<% else %>
+  <%= render 'search' %>
+<% end %>
 
-</div>
