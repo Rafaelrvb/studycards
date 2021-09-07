@@ -4,7 +4,7 @@ class DecksController < ApplicationController
     if params[:query].present?
       @decks = Deck.search_by_title_description(params[:query])
     else
-      @decks = Deck.all
+      @decks = nil
     end
 
   end
