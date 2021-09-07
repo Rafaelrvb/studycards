@@ -21,7 +21,7 @@ class DeckCommunitiesController < ApplicationController
     @deck_community = DeckCommunity.new(deck_id: @deck.id, user_id: current_user.id)
 
     if @deck_community.save
-      redirect_to deck_community_path(current_user)
+      redirect_to search_path
     else
       flash[:alert] = "Deck community couldn´t be create, try again"
     end
