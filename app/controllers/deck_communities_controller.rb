@@ -5,10 +5,12 @@ class DeckCommunitiesController < ApplicationController
   def show
     @deck_community = DeckCommunity.where(user: current_user)
     unless @deck_community.empty?
-      unless study_info(@deck_community[params[:var].to_i])[0].nil?
+      @overall_info = overall_info(@deck_community)
+      unless @deck_community[params[:var].to_i].user_progress.nil?
         @study_info = study_info(@deck_community[params[:var].to_i])
         @score = score(@study_info).round(2) * 100
         @cards_done = @study_info.select {|study| study.repetition > 0}.count
+
       end
     end
   end
@@ -75,6 +77,48 @@ class DeckCommunitiesController < ApplicationController
     end
 
     return total_grade / total_reps
+  end
+
+  def overall_info(deckcomm)
+    # counting number of decks
+    number_of_decks = deckcomm.count
+
+
+    # counting number of cards
+    number_of_cards = 0
+    deckcomm.each do |deck|
+      number_of_cards += deck.deck.cards.count
+    end
+
+    # counting number of sessions
+    number_of_sessions = 0
+    deckcomm.each do |deck|
+      number_of_sessions += deck.user_progress.sessions unless deck.user_progress.nil?
+    end
+
+    # summing score and number of cards done of each deck community
+    score = 0
+    cards_done = 0
+    decks_studied = 0
+    deckcomm.each do |deck|
+      unless deck.user_progress.nil?
+        study_info = study_info(deck)
+        score += score(study_info)
+        cards_done += study_info.select {|study| study.repetition > 0}.count
+        decks_studied += 1
+      end
+    end
+
+    # calculating overall grade of cards studied
+    if decks_studied == 0
+      overall_grade = ""
+    else
+      overall_grade = (score / decks_studied).round(2) * 100
+    end
+
+    return {number_of_decks: number_of_decks, total_n_of_cards: number_of_cards, cards_done: cards_done, number_of_sessions: number_of_sessions, overall_grade: overall_grade }
+
+
   end
 
 
