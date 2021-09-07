@@ -3,27 +3,49 @@
 }
 
 .list-collection{
-  border: solid 2px #297F87;
-  border: solid 2px #297F87;
-  border-radius: 8px;
   margin-bottom: 3px;
   background-color: white;
 }
 
 .deck-item{
-  display: flow-root;;
+  display: flow-root;
   justify-content: space-between;
-  border: solid 2px #297F87;
-  border-radius: 8px;
   margin-bottom: 3px;
   margin-block-end: 3px;
-  background-color: white;
+
+  &:hover{
+    box-shadow: 2px 2px 8px lightgray;
+  }
+  .btn{
+    width: 100%;
+
+  }
 }
 
 .card-collection{
-  border: solid 2px #297F87;
-  border: solid 2px #297F87;
-  border-radius: 8px;
   margin-bottom: 3px;
   background-color: white;
+}
+
+#deck-info-dashboard{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  /* background-color: #FFF7AE; */
+  padding: 8px;
+  /* background-size: inherit; */
+}
+
+#deck-session-dashboard{
+  display: flex;
+  justify-content: space-around;
+  margin: inherit;
+  padding: 8px;
+  #btns {
+    display: grid;
+  }
+  .btn{
+    width: 100%;
+  }
+
 }
