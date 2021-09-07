@@ -1,25 +1,29 @@
-
 <div class="container text-center my-3">
   <div class="my-collection row d-flex justify-content-between">
-    <div class="list-collection col-6">
+    <div class="list-collection col-4">
       <h1>My collection</h1>
       <% var = -1 %>
       <% @deck_community.each do |decks| %>
-        <div class="deck-item" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr " >
+        <div class="deck-item">
           <% var += 1  %>
+
           <%= link_to "#{decks.deck.title} (#{decks.deck.availability})", show_path(decks.deck), class: "btn btn-info" %>
           <%= link_to "Study this deck", new_study_path(decks), class: "btn btn-primary" %>
           <%= link_to "dash", deck_community_path(user_id: current_user.id, var: var) %>
           <div class="text-center "><%= link_to "", decks, method: :delete, data: { confirm: 'Are you sure?' }, class: "far fa-trash-alt" %></div>
+
         </div>
       <% end %>
     </div>
-    <div class="col">
-        <% unless @deck_community.empty? %>
-          <% unless @deck_community[params[:var].to_i].user_progress.nil? %>
-            <%= render 'dashboard', {var: params[:var]}  %>
-          <% end %>
-        <% end %>
+    <div class="list-collection col-8">
+      <% unless @deck_community.empty? %>
+        <%= render 'dashboard', {var: params[:var]}  %>
+      <% end %>
+    </div>
+    <div class="card-collection col">
+        <h3><%= @deck_community[var.to_i].deck.title%></h3>
+        <h4>Deck:</h4>
+        <h4>Score:</h4>
     </div>
   </div>
 </div>
