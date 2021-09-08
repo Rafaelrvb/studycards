@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_203728) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "availability", default: "Public"
-    t.float "price"
+    t.float "price", default: 0.0
     t.index ["user_id"], name: "index_decks_on_user_id"
   end
 

@@ -1,28 +1,27 @@
 <div class="container text-center my-3">
   <div class="my-collection row d-flex justify-content-between">
-    <div class="list-collection col-3">
-      <h2>My Market</h2>
-      <% @my_deck_market.each do |decks| %>
-        <div class="deck-item" style="display: grid; grid-template-columns: 1fr">
-          <%= link_to "#{decks.deck.title}", show_path(decks.deck), class: "btn btn-info" %>
+    <div class="list-collection col-4">
+      <h1>My Marketplace</h1>
+      <% var = -1 %>
+      <% @my_deck_market.each do |deck| %>
+        <div class="deck-item">
+          <% var += 1  %>
+          <%= link_to "#{deck.title}", marketplace_path(var: var), class: "btn btn-info" %>
         </div>
       <% end %>
     </div>
-    <% unless @my_deck_market.empty? %>
-      <%= render 'dashboard_market'  %>
-    <% end %>
-  </div>
-  <div class="my-collection d-flex justify-content-between row">
-    <div class="card-collection col">
-      <div class="text-left">
-        <p>Total decks sold: </p>
-        <p>Mean price paid:</p>
-        <p>Net earnings:</p>
-      </div>
-      <div class="text-center">
-        <%= link_to "Withdraw", "#", class: "btn btn-info" %>
+    <div class="list-collection col-8">
+      <% unless @my_deck_market.empty? %>
+        <%= render 'dashboard_market', {var: params[:var]}  %>
+      <% end %>
+    </div>
+    <div class="card-collection col my-2">
+      <div class="row" style="justify-content:center;"><h4><strong><%= current_user.name %>'s</strong> Dashboard</h4></div>
+      <div class="row" style="justify-content:space-around">
+        <% unless @my_deck_market.nil? %>
+          <%= render 'overall_dashboard_market' %>
+        <% end %>
       </div>
     </div>
   </div>
-
 </div>

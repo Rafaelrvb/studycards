@@ -1,21 +1,24 @@
-<div class="col ">
   <div class="card-collection col">
-    <div class="row d-flex" style="justify-content:space-around">
-      <div><p>Deck: <%= @my_deck_market[0].deck.title %> </p></div>
+    <div id="deck-info-dashboard" class="row">
+      <div>Deck: <strong><%= @my_deck_market[var.to_i].title%></strong></div>
+      <div>N° of cards: <%= @my_deck_market[var.to_i].cards.count%></div>
+
+    </div>
+
+    <div id="deck-session-dashboard" class="row">
+      <div style="text-align: justify">
+        <p>Total times sold: <%= DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).count %></p>
+        <p>Mean price paid: $<%= @my_deck_market[var.to_i].price  %></p>
+        <p>Total earnings: <%= DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).count * @my_deck_market[var.to_i].price  * 0.9 %> </p>
+        <% unless DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).empty? %>
+        <p>Last buyer: <%= User.find(DeckCommunity.where(deck_id: @my_deck_market[var.to_i])[0].user_id).name %></p>
+        <% end %>
+      </div>
       <div>
-          <%= simple_form_for @my_deck_market[0].deck, url: update_deck_path(@my_deck_market[0].deck) do |f| %>
+          <%= simple_form_for @my_deck_market[var.to_i], url: update_deck_path(@my_deck_market[var.to_i]) do |f| %>
             <%= f.input :price %>
-            <%= f.button :submit, class: 'btn btn-info' %>
+            <%= f.button :submit, value: 'Update price', class: 'btn btn-info' %>
           <% end %>
       </div>
     </div>
-    <div class="row d-flex" style="justify-content:center">
-      <div style="text-align: justify">
-        <p>Total times sold: <%= DeckCommunity.where(deck_id: @my_deck_market[0].deck).count %></p>
-        <p>Mean price paid: $<%= @my_deck_market[0].deck.price  %></p>
-        <p>Total earnings: <%= DeckCommunity.where(deck_id: @my_deck_market[0].deck).count * 40 * 0.9 %> </p>
-        <p>Last buyer: <%= User.find(DeckCommunity.where(deck_id: @my_deck_market[0].deck).last.user_id).name %></p>
-      </div>
-    </div>
-
-</div>
+  </div>

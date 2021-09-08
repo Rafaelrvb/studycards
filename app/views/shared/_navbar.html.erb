@@ -35,9 +35,11 @@
         <li class="nav-item">
           <%= link_to "My Collection", deck_community_path(current_user), class: "nav-link" %>
         </li>
+        <% unless Deck.where(user_id: current_user, availability: "Commercial").empty? %>
         <li class="nav-item">
           <%= link_to "My Marketplace", marketplace_path, class: "nav-link" %>
         </li>
+        <% end %>
         <li class="nav-item dropdown">
           <% if current_user.profile_pic.attached? %>
             <% #cloudinary image, transformation, css configs %>

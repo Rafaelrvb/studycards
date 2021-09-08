@@ -35,12 +35,7 @@ class DeckCommunitiesController < ApplicationController
   end
 
   def market
-    deck_community = DeckCommunity.where(user: current_user)
-    @my_deck_market = deck_community.select do |deckcomm|
-      deckcomm.deck.user_id == current_user.id && deckcomm.deck.availability == 'Commercial'
-    end
-
-
+    @my_deck_market = Deck.where(user_id: current_user, availability: "Commercial")
   end
 
   private
