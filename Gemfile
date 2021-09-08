@@ -69,3 +69,7 @@ gem 'pg_search', '~> 2.3.0'
 
 # cloudinary
 gem 'cloudinary', '~> 1.16.0'
+
+#stripe
+gem 'money-rails'
+gem 'stripe'

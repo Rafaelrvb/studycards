@@ -1,5 +1,5 @@
 class AddPriceToDecks < ActiveRecord::Migration[6.0]
   def change
-    add_column :decks, :price, :float
+    add_monetize :decks, :price, currency: { present: false }
   end
 end
