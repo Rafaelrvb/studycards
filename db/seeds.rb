@@ -11,6 +11,8 @@ require 'open-uri'
 require "base64"
 
 puts "cleaning the database"
+DeckReview.destroy_all
+DeckCommunity.destroy_all
 Card.destroy_all
 Deck.destroy_all
 User.destroy_all
@@ -65,4 +67,28 @@ puts "#{user.id} - #{user.name} created"
   end
   puts "#{amount} cards expected and #{i} created"
 
+end
+
+@user = User.all
+@user.each do |user|
+  5.times do
+    deck = Deck.all.sample
+    until deck.user_id != user.id
+      deck = Deck.all.sample
+    end
+    deck_community = DeckCommunity.new(
+      deck_id: deck.id,
+      user_id: user.id
+    )
+    deck_community.save!
+    puts "Community #{deck_community.id} saved"
+
+    review = DeckReview.new(
+      deck_id: deck.id,
+      user_id: user.id,
+      review_content: Faker::Lorem.sentence(word_count: 3, supplemental: true),
+      rating: rand(1..5)
+    )
+    review.save!
+  end
 end
