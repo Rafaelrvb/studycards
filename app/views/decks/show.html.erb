@@ -1,7 +1,4 @@
-<%= form_tag orders_path do %>
-  <%= hidden_field_tag 'deck_id', @deck.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-<% end %>
+
 
 
 
@@ -171,6 +168,10 @@
      </div>
   </div>
 </div>
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'deck_id', @deck.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
 
 
 <script>
