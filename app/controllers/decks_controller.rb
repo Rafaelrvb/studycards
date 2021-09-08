@@ -31,6 +31,7 @@ class DecksController < ApplicationController
     @deck = Deck.new(deck_params)
     @deck.user_id = current_user.id
     if @deck.save
+      @deck.update(sku: @deck.id)
       DeckCommunity.create(user_id: current_user.id, deck_id: @deck.id)
       redirect_to new_card_path(@deck.id)
     else
