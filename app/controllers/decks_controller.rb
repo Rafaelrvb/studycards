@@ -25,7 +25,7 @@ class DecksController < ApplicationController
     deck.update(deck_params)
     deck.save
 
-    redirect_to marketplace_path
+    redirect_to marketplace_path(var: params[:var])
   end
 
   def create
