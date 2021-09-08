@@ -20,6 +20,14 @@ class DecksController < ApplicationController
     #@card = Card.new
   end
 
+  def update
+    deck = Deck.find(params[:id])
+    deck.update(deck_params)
+    deck.save
+
+    redirect_to marketplace_path
+  end
+
   def create
     @deck = Deck.new(deck_params)
     @deck.user_id = current_user.id
@@ -34,7 +42,7 @@ class DecksController < ApplicationController
   private
 
   def deck_params
-    params.require(:deck).permit(:title, :description, :availability)
+    params.require(:deck).permit(:title, :description, :availability, :price, :deck_pic)
   end
 
 
