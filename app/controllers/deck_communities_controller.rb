@@ -10,7 +10,6 @@ class DeckCommunitiesController < ApplicationController
         @study_info = study_info(@deck_community[params[:var].to_i])
         @score = score(@study_info).round(2) * 100
         @cards_done = @study_info.select {|study| study.repetition > 0}.count
-
       end
     end
   end
@@ -36,12 +35,7 @@ class DeckCommunitiesController < ApplicationController
   end
 
   def market
-    deck_community = DeckCommunity.where(user: current_user)
-    @my_deck_market = deck_community.select do |deckcomm|
-      deckcomm.deck.user_id == current_user.id && deckcomm.deck.availability == 'Commercial'
-    end
-
-
+    @my_deck_market = Deck.where(user_id: current_user, availability: "Commercial")
   end
 
   private
@@ -76,7 +70,9 @@ class DeckCommunitiesController < ApplicationController
       total_reps = total_reps + card_study.repetition
     end
 
-    return total_grade / total_reps
+    total_reps.zero? ? score = 0 : score = (total_grade / total_reps)
+
+    return score
   end
 
   def overall_info(deckcomm)
