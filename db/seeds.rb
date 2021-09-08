@@ -52,6 +52,9 @@ puts "#{user.id} - #{user.name} created"
     user_id: user.id
   )
   deck.save
+  deck.sku = deck.id
+  deck.save
+
   puts "#{deck.id} - #{deck.title} created"
 
   i = 0
