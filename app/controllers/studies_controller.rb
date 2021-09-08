@@ -5,7 +5,12 @@ class StudiesController < ApplicationController
     if DeckCommunity.find(params[:deck_community_id]).user_id == current_user.id
       @deck_community = DeckCommunity.find(params[:deck_community_id])
 
+      if @deck_community.deck.cards.count.zero?
+        flash[:alert] = "You dont have any cards in this deck"
+        redirect_to deck_community_path(current_user)
+      end
       # creating a session of user progress
+
       if @deck_community.user_progress.nil?
         @session = UserProgress.create(deck_community_id: @deck_community.id, sessions: 0)
       else
