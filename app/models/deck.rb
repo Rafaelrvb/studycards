@@ -6,6 +6,8 @@ class Deck < ApplicationRecord
 
   has_one_attached :deck_pic
 
+  monetize :price_cents
+
   validates :title, presence: true, length: { minimum: 3 }
   validates :description, length: { minimum: 6 }
   validates :title, uniqueness: { scope: [:user_id] }

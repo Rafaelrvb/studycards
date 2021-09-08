@@ -1,5 +1,4 @@
 class DecksController < ApplicationController
-
   def index # /search
     if params[:query].present?
       @decks = Deck.search_by_title_description(params[:query])

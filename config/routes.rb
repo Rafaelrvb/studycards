@@ -33,5 +33,9 @@ Rails.application.routes.draw do
   patch '/deck_reviews/:id', to: 'deck_reviews#update', as: :update_review
   delete '/deck_reviews/:id/destroy', to: 'deck_reviews#destroy', as: :destroy_review
 
+  #  Routes for Orders
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 
 end
