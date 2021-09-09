@@ -41,7 +41,7 @@
             <% if deck.deck_reviews.empty?%>
             <p>no reviews yet</p>
             <% else %>
-            <p><%= "⭐"*(rating/deck.deck_reviews.count)%> ( <%= rating/deck.deck_reviews.count%> )</p>
+            <p><%= "⭐"*(rating/deck.deck_reviews.count)%> ( <%= deck.deck_reviews.count%> )</p>
             <% end %>
           </div>
         </div>
