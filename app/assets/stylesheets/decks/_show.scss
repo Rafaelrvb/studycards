@@ -1,20 +1,21 @@
 
 .form-show-deck {
     background-color: white;
-    margin-top: 86px;
-    padding: 25px 40px;
-    border-radius: 4px;
+    margin-top: 120px;
+    padding: 72px 40px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 16px lightgray;
     h2{
       font-weight: bold ;
       font-size: 40px;
-      margin-bottom: 20px;
+      margin-bottom: 60px;
       text-align: center;
     }
-    h1{
-      font-weight: bold ;
-      font-size: 55px;
-      margin-bottom: 30px;
-      text-align: center;
+    h5{
+      text-align: justify;
+      align-content: just;
+      margin: 0 auto;
+      padding-inline: 42px;
     }
     .btn{
     width: 100%;
@@ -25,5 +26,27 @@
       width: 100%;
       text-align: center;
     }
+    .card-review{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      border: none;
+      p {
+        margin:6px;
+      }
+    }
 
+}
+
+.deck-show-btns {
+    width: 50%;
+    margin: 72px auto;
+    .btn {
+      background-color:#16c79a;
+      font-weight: bold;
+      color:white;
+      letter-spacing: 00.05rem;
+      &:hover {
+        background-color:#16c79bbe
+      }
+    }
 }

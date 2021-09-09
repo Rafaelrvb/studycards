@@ -1,7 +1,7 @@
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: #297F87;
+  background: #11698E;
   position: fixed;
   z-index: 150;
   width: 100%;
@@ -22,8 +22,9 @@
   }
 
   .nav-link{
-    background-color: #FFF7AE;
+    background-color: #F8F1F1;
     margin-left: 10px;
+    height: 38px;
   }
 
   .form-group {
@@ -37,5 +38,9 @@
     mix-blend-mode: multiply;
   }
  #navbar-button{
-   background-color: #FFF7AE;
+   background-color: #16c79a;
+   color: white;
+   &:hover {
+        background-color:#16c79bbe;
+      }
  }

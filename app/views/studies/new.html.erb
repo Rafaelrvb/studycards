@@ -8,13 +8,15 @@
       <% cards = @deck_community.deck.cards %>
       <p><%= cards.find_index(@card) + 1 %> of <%= cards.count %></p>
       <p>Session: <%= @session.sessions %></p>
-      <p>Time: 00:00</p>
     </div>
     <div class="cartao card-front" id = "0" >
       <p><%= @card.front_page %></p>
     </div>
     <div class="cartao card-back d-none" id = "1" >
       <p><%= @card.back_page %></p>
+    </div>
+    <div id="btn-show" class="btn btn-primary">
+      Flip!
     </div>
     <div class="cartao button-grid d-none" id = "2" >
       <div class="btn-grid"><%= link_to "0%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 0, session: @session ), method: :post, class: "btn btn-danger" %></div>
@@ -23,9 +25,7 @@
       <div class="btn-grid"><%= link_to "75%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 75, session: @session ), method: :post, class: "btn btn-success" %></div>
       <div class="btn-grid"><%= link_to "100%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 100, session: @session ), method: :post, class: "btn btn-success" %></div>
     </div>
-    <div id="btn-show" class="btn btn-primary">
-      Flip!
-    </div>
+
 
   </div>
 </div>
