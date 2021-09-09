@@ -1,5 +1,19 @@
-<%= simple_form_for @review, url: {action: "update"} do |f| %>
-  <%= f.input :review_content %>
-  <%= f.input :rating %>
-  <%= f.submit %>
-<% end %>
+<div class="container" style="max-width: 50%">
+  <div class="review">
+    <div class="img_review">
+      <% if @review.deck.deck_pic.attached? %>
+        <% #cloudinary image, transformation, css configs %>
+        <%= cl_image_tag(@review.deck.deck_pic.key,
+        :transformation=>[{:width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"thumb"}],
+        class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false )%>
+      <% else %>
+        <img src="https://images-platform.99static.com//yMu615t0H7ZoE7NAZn48S48DZGY=/350x309:851x810/fit-in/590x590/99designs-contests-attachments/90/90852/attachment_90852898" />
+      <% end %>
+    </div>
+    <%= simple_form_for @review, url: {action: "update"} do |f| %>
+      <div><%= f.input :review_content %></div>
+      <div><%= f.input :rating %></div>
+      <%= f.submit class: 'btn btn-primary my-3'%>
+    <% end %>
+  </div>
+</div>
