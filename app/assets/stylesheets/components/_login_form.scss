@@ -1,23 +1,29 @@
 .form-login {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     margin-top: 30px;
     padding: 25px 40px;
     border-radius: 4px;
     h2{
-      font-weight: bold ;
-      font-size: 25px;
-      margin-bottom: 30px;
       text-align: center;
     }
-    h1{
-      font-weight: bold ;
-      font-size: 35px;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-    .btn{
-    width: 100%;
-    margin-bottom: 30px;
-    margin-top: 15px;
-    }
+
 }
+#create-deck-btn {
+  margin-bottom: 20px;
+}
+
+.form-group, .form-control {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 600  ;
+
+}
+fieldset {
+  display: flex;
+  justify-content: space-around;
+
+}
+.form-check-label {
+      color: black!important;
+    }

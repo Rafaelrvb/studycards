@@ -1,8 +1,9 @@
+
   <div class="card-collection col">
     <div id="deck-info-dashboard" class="row">
       <div>Deck: <strong><%= @deck_community[var.to_i].deck.title%></strong></div>
       <div>Author: <%= User.find(@deck_community[var.to_i].deck.user_id).name %></div>
-      <div>N° of cards: <%= @deck_community[var.to_i].deck.cards.count%></div>
+      <div >N° of cards:</div> <div id="0101"><%= @deck_community[var.to_i].deck.cards.count%></div>
     </div>
 
     <div id="deck-session-dashboard" class="row">
