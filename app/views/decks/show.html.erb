@@ -1,41 +1,61 @@
 
 <div style="background-color: #F3F1F5; padding-bottom: 350px;">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-4">
+    <div class="col-12 col-sm-4" style="flex: 0 0 50%; max-width: 50%;">
      <div class="form-show-deck">
 <<<<<<< HEAD
         <h2><% #Titlte %><%= @deck.title %></h2>
         <h4><% #Description %><%= @deck.description %></h4>
 =======
         <h2><%= @deck.title %></h2>
+<<<<<<< HEAD
         <h4><%= @deck.description %></h4>
 >>>>>>> cb67819e1fb85b5040d1963a587f1b0d646b3422
         <div>
+=======
+        <h5>From: <%= User.find(@deck.user_id).name %></h5>
+        <hr>
+        <h5><%= @deck.description %></h5>
+
+        <hr>
+        <div class="deck-show-btns">
+>>>>>>> 61d9f05cfee19b0431fe227dcdd375fa1422c7d2
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
             <%if @deck.availability == "Public"%>
-              <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn btn-info" %>
+              <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn" %>
             <% else %>
-              <button id="myBtn" class="btn btn-info">Add to Cart</button>
+              <button id="myBtn" class="btn">Add to Cart</button>
             <% end %>
           <% else %>
-            <%= link_to "View in my collection", deck_community_path(current_user), class: "btn btn-info" %>
+            <%= link_to "View in my collection", deck_community_path(current_user), class: "btn" %>
             <% if DeckReview.where(user_id: current_user.id, deck_id: @deck.id).empty? %>
-              <%= link_to "Add review", new_deck_review_path, class: "btn btn-info" %>
+              <%= link_to "Add review", new_deck_review_path, class: "btn" %>
             <% else %>
-              <%= link_to "Edit review", edit_deck_review_path(@review), class: "btn btn-info" %>
+              <%= link_to "Edit review", edit_deck_review_path(@review), class: "btn" %>
             <% end %>
           <% end %>
           <% if current_user.id == @deck.user.id  %>
-            <%= link_to "Add more cards", new_card_path(params[:id]), class: "btn btn-info" %>
+            <%= link_to "Add more cards", new_card_path(params[:id]), class: "btn" %>
           <% end %>
         </div>
+        <div class="card-review">
+        <p>Name</p>
+        <p>Review</p>
+        <p>Rating</p>
+
+        </div>
+        <hr>
         <div>
           <% @reviews.each do |review| %>
-          <div class="card">
-          <%= "#{review.user.name}:" %>
-          <%= review.review_content %>
-          <%= "⭐"*review.rating %>
-          <div class="text-center "><%= link_to "", destroy_review_path(review.id),method: :delete, class: "far fa-trash-alt" %></div>
+          <div class="card-review">
+            <p><%= "#{review.user.name}:" %></p>
+            <p><%= review.review_content %></p>
+            <div class="d-flex" style="justify-content:space-between;">
+              <p><%= "⭐"*review.rating %></p>
+              <% if review.user_id == current_user.id%>
+              <%= link_to "", destroy_review_path(review.id),method: :delete, class: "far fa-trash-alt" %>
+              <% end %>
+            </div>
           </div>
           <% end %>
         </div>
