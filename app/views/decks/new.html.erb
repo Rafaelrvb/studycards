@@ -8,6 +8,7 @@
             <%= simple_form_for @deck, url: create_path do |f| %>
             <%= f.input :title %>
             <%= f.input :description %>
+            <%= f.input :dec_pic, as: :file %>
             <%= f.input :availability, as: :radio_buttons, collection: ["Public","Private", "Commercial"], include_hidden: false %>
             <%= f.button :submit, class: 'btn btn-info' %>
             <% end %>
