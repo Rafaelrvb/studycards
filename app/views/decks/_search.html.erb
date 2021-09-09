@@ -1,12 +1,6 @@
-<div class="container text-center">
-  <h3 id="search-header"><%= @decks.count %> decks matches your search!</h3>
-  <div class="deck-header">
-    <div>Deck</div>
-    <div>Creator</div>
-    <div>N° of cards</div>
-    <div>Users</div>
-    <div>Rating</div>
-  </div>
+<div class="container text-center" >
+  <h2><%= @decks.count %> decks matches your search!</h2>
+  <hr style="margin:21px">
 
   <% @decks.each do |deck| %>
     <div class="card-product">

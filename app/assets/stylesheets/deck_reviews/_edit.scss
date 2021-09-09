@@ -1,12 +1,16 @@
-.btn-primary {
-background-color: forestgreen;
-border-radius: 2.22rem;
-cursor: pointer;
-min-width: 5.16rem;
-}
-
 .review {
   position:absolute;
+  height: 500px;
+  width: 500px;
+
+  .btn-primary {
+    border-radius: 2.22rem;
+    cursor: pointer;
+    min-width: 5.16rem;
+    &:hover{
+      background-color: forestgreen;
+    }
+  }
 }
 
 .img_review{

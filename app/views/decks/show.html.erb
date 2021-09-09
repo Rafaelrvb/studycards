@@ -3,8 +3,13 @@
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4">
      <div class="form-show-deck">
+<<<<<<< HEAD
         <h2><% #Titlte %><%= @deck.title %></h2>
         <h4><% #Description %><%= @deck.description %></h4>
+=======
+        <h2><%= @deck.title %></h2>
+        <h4><%= @deck.description %></h4>
+>>>>>>> cb67819e1fb85b5040d1963a587f1b0d646b3422
         <div>
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
             <%if @deck.availability == "Public"%>
