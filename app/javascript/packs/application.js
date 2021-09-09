@@ -31,11 +31,13 @@ import { showAnswer } from '../components/cards';
 import { selector } from '../components/select';
 import { initUpdateMiddleBannerOnScroll } from '../components/home';
 
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   showAnswer();
   selector();
   initUpdateMiddleBannerOnScroll();
+
 
 });
