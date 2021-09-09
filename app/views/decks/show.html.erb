@@ -1,8 +1,15 @@
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'deck_id', @deck.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+
+
 
 <div style="background-color: #F3F1F5; padding-bottom: 350px;">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4" style="flex: 0 0 50%; max-width: 50%;">
      <div class="form-show-deck">
+
         <h2><%= @deck.title %></h2>
         <h5>From: <%= User.find(@deck.user_id).name %></h5>
         <hr>
@@ -10,6 +17,7 @@
 
         <hr>
         <div class="deck-show-btns">
+
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
             <%if @deck.availability == "Public"%>
               <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn" %>
@@ -180,11 +188,11 @@
      </div>
   </div>
 </div>
+
 <%= form_tag orders_path do %>
   <%= hidden_field_tag 'deck_id', @deck.id %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
 <% end %>
-
 
 <script>
 // Get the modal
