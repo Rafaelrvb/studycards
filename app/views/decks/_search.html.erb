@@ -16,7 +16,9 @@
         :transformation=>[{:width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"thumb"}],
         class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false )%>
       <% else %>
-        <img src="https://images-platform.99static.com//yMu615t0H7ZoE7NAZn48S48DZGY=/350x309:851x810/fit-in/590x590/99designs-contests-attachments/90/90852/attachment_90852898" />
+        <%= cl_image_tag("cards_ico_m3jslu",
+            :transformation=>[{:width=>100, :height=>80, :gravity=>"face", :radius=>"max", :crop=>"thumb"}],
+             data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false )%>
       <% end %>
         <div class="card-product-infos">
           <div >
