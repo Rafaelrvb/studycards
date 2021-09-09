@@ -20,9 +20,9 @@ puts "database cleaned"
 puts "seeding database..."
 
 user = User.new(
-      name: 'admin',
-      nickname: 'admin_nickname',
-      email: 'admin@gmail.com',
+      name: 'Pedro',
+      nickname: 'pedro_braga',
+      email: 'pedro@gmail.com',
       password: '123456'
     )
 user.save!
@@ -49,9 +49,13 @@ puts "#{user.id} - #{user.name} created"
   deck = Deck.new(
     title: Base64.decode64(trivia['results'][0]['category']),
     description: "Trivia about #{Base64.decode64(trivia['results'][0]['category'])} with #{amount-1} questions!",
+    availability: ["Public","Public","Public","Commercial"].sample,
     user_id: user.id
   )
   deck.save
+  if deck.availability == "Commercial"
+    deck.price = 10
+  end
   deck.sku = deck.id
   deck.save
 
