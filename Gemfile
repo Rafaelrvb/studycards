@@ -73,3 +73,4 @@ gem 'cloudinary', '~> 1.16.0'
 #stripe
 gem 'money-rails'
 gem 'stripe'
+gem 'stripe_event'
