@@ -10,31 +10,17 @@
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4" style="flex: 0 0 50%; max-width: 50%;">
      <div class="form-show-deck">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <h2><% #Titlte %><%= @deck.title %></h2>
-        <h4><% #Description %><%= @deck.description %></h4>
-=======
-=======
 
->>>>>>> 8eb9ff7b0a12d169d7e2442ec05ee34ee8202302
+
         <h2><%= @deck.title %></h2>
-<<<<<<< HEAD
-        <h4><%= @deck.description %></h4>
->>>>>>> cb67819e1fb85b5040d1963a587f1b0d646b3422
-        <div>
-=======
+
         <h5>From: <%= User.find(@deck.user_id).name %></h5>
         <hr>
         <h5><%= @deck.description %></h5>
 
         <hr>
         <div class="deck-show-btns">
-<<<<<<< HEAD
->>>>>>> 61d9f05cfee19b0431fe227dcdd375fa1422c7d2
-=======
 
->>>>>>> 8eb9ff7b0a12d169d7e2442ec05ee34ee8202302
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
             <%if @deck.availability == "Public"%>
               <%= link_to "Add to my collection", addcollection_path(params[:id]), class: "btn" %>
