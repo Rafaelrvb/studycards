@@ -2,8 +2,8 @@
   <div class="review">
     <div class="img_review">
       <img src="https://images-platform.99static.com//yMu615t0H7ZoE7NAZn48S48DZGY=/350x309:851x810/fit-in/590x590/99designs-contests-attachments/90/90852/attachment_90852898" />
-    </div>
-    <%= simple_form_for [@deck, @review] do |f| %>
+    </div class="form-review">
+      <%= simple_form_for [@deck, @review] do |f| %>
       <%= f.input :review_content %>
       <%= f.input :rating %>
       <%= f.submit class: 'btn btn-primary my-3' %>
