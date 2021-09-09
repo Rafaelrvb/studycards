@@ -15,13 +15,6 @@
         <%= render 'dashboard_market', {var: params[:var]}  %>
       <% end %>
     </div>
-    <div class="card-collection col my-2">
-      <div class="row" style="justify-content:center;"><h4><strong><%= current_user.name %>'s</strong> Dashboard</h4></div>
-      <div class="row" style="justify-content:space-around">
-        <% unless @my_deck_market.nil? %>
-          <%= render 'overall_dashboard_market' %>
-        <% end %>
-      </div>
-    </div>
+
   </div>
 </div>
