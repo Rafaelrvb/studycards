@@ -1,9 +1,15 @@
+<%= form_tag orders_path do %>
+  <%= hidden_field_tag 'deck_id', @deck.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+<% end %>
+
+
 
 <div style="background-color: #F3F1F5; padding-bottom: 350px;">
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4">
      <div class="form-show-deck">
-        <h2><%= @deck.title %></h2>
+        <h2>Title: <%= @deck.title %></h2>
         <h4>Description: <%= @deck.description %></h4>
         <div>
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
@@ -165,11 +171,11 @@
      </div>
   </div>
 </div>
+
 <%= form_tag orders_path do %>
   <%= hidden_field_tag 'deck_id', @deck.id %>
   <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
 <% end %>
-
 
 <script>
 // Get the modal
