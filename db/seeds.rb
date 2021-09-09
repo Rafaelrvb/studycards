@@ -86,11 +86,23 @@ end
     deck_community.save!
     puts "Community #{deck_community.id} saved"
 
+    options = ["Great cards","Excellent!", "Nice job", "Chuck Norris wrote this cards", "Very good","I learned a lot","It helped me a lot","Difficult cards but very well structured. I liked it a lot",
+              "Good", "I really can study whit that","Nice Price",
+              "It could be better","I appreciated some cards","I liked it but it could be more difficult", "Complex but funccional",
+              "I couldn`t learn well", "Need to be more hard",
+              "Terrible", "it´s random", "It´s bad", "try again :(","Too bad, too many cards, and they are repeated","Too expensive","Incomplete"]
+    content = options.sample
     review = DeckReview.new(
       deck_id: deck.id,
       user_id: user.id,
-      review_content: Faker::Lorem.sentence(word_count: 3, supplemental: true),
-      rating: rand(1..5)
+      review_content: content,
+      rating: if options.find_index(content) < 11
+                rand(4..5)
+              elsif options.find_index(content) > 16
+                rand(1..2)
+              else
+                3
+              end,
     )
     review.save!
   end
