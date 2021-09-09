@@ -1,19 +1,22 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-sm-4">
-      <div class="form-login">
-
-        <h1>Create new deck</h1>
-          <div>
+<div class="row justify-content-center">
+    <div class="col-12 col-sm-4" style="flex: 0 0 50%; max-width: 50%;">
+      <div class="form-login form-show-deck" >
+        <h2>Create new deck</h2>
+        <hr>
+            <div>
             <%= simple_form_for @deck, url: create_path do |f| %>
+            <%= f.input :deck_pic, as: :file, label: "Deck Picture:" %>
+            <br>
             <%= f.input :title %>
+            <br>
             <%= f.input :description %>
-            <%= f.input :dec_pic, as: :file %>
-            <%= f.input :availability, as: :radio_buttons, collection: ["Public","Private", "Commercial"], include_hidden: false %>
-            <%= f.button :submit, class: 'btn btn-info' %>
+            <br>
+            <%= f.input :availability, as: :radio_buttons, label: "Deck Type:", collection: ["Public","Private", "Commercial"], include_hidden: false %>
+            <div class="deck-show-btns" id="create-deck-btn">
+              <%= f.button :submit, class: 'btn' %>
+            </div>
             <% end %>
           </div>
       </div>
     </div>
   </div>
-</div>

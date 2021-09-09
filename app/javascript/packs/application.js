@@ -30,6 +30,7 @@ import "bootstrap";
 import { showAnswer } from '../components/cards';
 import { selector } from '../components/select';
 import { initUpdateMiddleBannerOnScroll } from '../components/home';
+import { load } from '../components/counter'
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
   showAnswer();
   selector();
   initUpdateMiddleBannerOnScroll();
+  load();
 
 
 });
