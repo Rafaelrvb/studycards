@@ -4,7 +4,7 @@
     <div class="col-12 col-sm-4">
      <div class="form-show-deck">
         <h2><%= @deck.title %></h2>
-        <h4>Description: <%= @deck.description %></h4>
+        <h4><%= @deck.description %></h4>
         <div>
           <% if DeckCommunity.where(user_id: current_user.id, deck_id: @deck.id).empty?  %>
             <%if @deck.availability == "Public"%>
