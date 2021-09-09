@@ -16,6 +16,10 @@ class OrdersController < ApplicationController
     )
 
     order.update(checkout_session_id: session.id)
+    @deck = order.deck
+    @deck_community = DeckCommunity.new(deck_id: @deck.id, user_id: current_user.id)
+    @deck_community.save
+
     redirect_to new_order_payment_path(order)
   end
 
