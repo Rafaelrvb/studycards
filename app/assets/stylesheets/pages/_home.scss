@@ -1,35 +1,140 @@
-.carousel {
-  margin-top: 88px;
-}
-.carousel-item{
+.bg-1{
+  background-color: rgb(233, 235, 238);
+  padding: 100px 0;
   background-size: cover;
-  background-position: center;
+  padding-top: 40px;
+}
+  .first-banner {
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 270px;
+
+      h1{
+      color: white;
+      font-size: 80px;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font: bold;
+      }
+
+      p{
+      color: rgb(19, 18, 18);
+      opacity: .7;
+      font-size: 20px;
+      }
+
+  }
+
+
+
+
+
+
+
+// .carousel {
+//   margin-top: 55px;
+// }
+// .carousel-item{
+//   background-size: cover;
+//   background-position: center;
+//   padding-bottom: 200px;
+
+// }
+
+// .carousel-item  h1 {
+//   color: rgb(3, 3, 3);
+//   font-size: 80px;
+//   font-weight: bold;
+
+// }
+
+// .carousel-item > p {
+//   color: rgb(19, 18, 18);
+//   opacity: .7;
+//   font-size: 20px;
+//   padding-right: 300px;
+// }
+
+// .carousel-captionn{
+//   // bottom: 30%;
+//   // left: 5%;
+// }
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-item  h1 {
-  color: rgb(3, 3, 3);
-  font-size: 80px;
+.slider-wrapper {
+  font-size: 30px;
+  color:#aaa;
   font-weight: bold;
-  padding-right: 300px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.carousel-item > p {
-  color: rgb(19, 18, 18);
-  opacity: .7;
-  font-size: 20px;
-  padding-right: 300px;
+.slider{
+  height: 50px;
+  padding-left:15px;
+}
+.slider-text1 {
+  background-color: lightgreen;
+  animation: slide 5s linear infinite;
+
+}
+.slider-text2 {
+  background-color: skyblue;
+}
+.slider-text3 {
+  background-color: lightcoral;
 }
 
-.carousel-captionn{
-  position: absolute;
-  bottom: 30%;
-  left: 5%;
+.slider div {
+  color:#fff;
+  height: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 2px 15px;
 }
+
+.slider{
+  height: 50px;
+  padding-left:15px;
+  overflow: hidden;   /* hide the text outside the slider div area */
+}
+
+@keyframes slide {
+  0% {margin-top:-300px;}
+  33% {margin-top:-200px;}
+  66% {margin-top:-100px;}
+  100% {margin-top:0px;}
+}
+
+@keyframes slide {
+  0% {margin-top:-300px;}
+  5% {margin-top:-200px;}  /* 5% delay */
+  33% {margin-top:-200px;}
+  38% {margin-top:-100px;} /* 5% delay */
+  66% {margin-top:-100px;}
+  71% {margin-top:0px;} /* 5% delay */
+  100% {margin-top:0px;}
+}
+
+
+
+
+
+
 
 
 
 .middle-banner {
-  background-color: rgb(252, 251, 251);
+  background-color: #F8F1F1;
   padding: 100px 0;
   background-size: cover;
 }
