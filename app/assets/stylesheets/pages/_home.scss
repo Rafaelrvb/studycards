@@ -2,12 +2,12 @@
   background-color: rgb(233, 235, 238);
 
   background-size: cover;
-  padding-top: 50px;
+  margin-top: 55px;
 }
   .first-banner {
     background-size: cover;
     background-position: center;
-    height: 700px;
+    height: 800px;
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgb(90, 87, 87);
     text-align: center;
@@ -15,22 +15,29 @@
 
       h1{
       color: white;
-      font-size: 80px;
+      font-size: 90px;
       font-weight: bold;
       font-family: 'Poppins', sans-serif;
-      font-weight: 600;
+      font-weight: 800;
       font: bold;
+
       }
 
-      p{
-      color: rgb(19, 18, 18);
+      h4{
+      color: rgb(255, 255, 255);
       opacity: .7;
-      font-size: 20px;
+
 
       }
      .buttons-first{
       padding: 40px ;
-      background-color: lightgreen;
+      background-color: #16C79A;
+      text-decoration: none;
+      color: white;
+    }
+    .float-left{
+      margin-right: 800px;
+
     }
 
   }
@@ -84,6 +91,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 200px;
+  margin-top: 50px;
 }
 
 .slider{
