@@ -43,10 +43,9 @@ let text6 = document.getElementById('0106');
 
 
 const load = () => {
-  if (text1) { animate(text1, 0, text1.innerHTML, 2500);}
+  if (text1) { animate(text1, 0, text1.innerHTML.int, 2500);}
   if (text2) { animate(text2, 0, text2.innerHTML, 2500);}
-  if (text3) {
-    animate(text3, 0, text3.innerHTML, 2500)
+  if (text3) { animate(text3, 0, text3.innerHTML, 2500)
   };
   if (text4) {
     animate(text4, 0, text4.innerHTML, 2500)

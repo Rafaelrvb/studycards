@@ -10,7 +10,7 @@
         <p>Mean price paid: $<%= @my_deck_market[var.to_i].price  %></p>
         <p>Total earnings: <%= (DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).count - 1) * @my_deck_market[var.to_i].price  * 0.9 %> </p>
         <% unless DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).empty?%>
-        <p>Last buyer: <%= User.find(DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).last.user_id).name  %></p>
+        <p>Last buyer: <%= User.find(DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).last.user_id).name unless User.find(DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).last.user_id).name == current_user.name %></p>
         <% end %>
       </div>
       <div id="btns" style="top:9px; right:30px">
