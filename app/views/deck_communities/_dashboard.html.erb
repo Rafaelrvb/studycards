@@ -12,7 +12,7 @@
       <div id="deck-session-info" style="text-align: justify">
         <p>Sessions completed: <span id="0101"><%= @deck_community[var.to_i].user_progress.sessions%></span></p>
         <p>Cards completed: <span id="0102"><%= @cards_done %></span><span> / <%=@deck_community[var.to_i].deck.cards.count%></span></p>
-        <p>Total score: <span id="0103"><%= @score.to_i%></span>%</p>
+        <p>Total score: <span id="0103"><%= @score.to_i%></span> %</p>
       </div>
     <% end %>
       <div id="btns">

@@ -27,10 +27,12 @@
             <% end %>
           <% else %>
             <%= link_to "View in my collection", deck_community_path(current_user), class: "btn" %>
-            <% if DeckReview.where(user_id: current_user.id, deck_id: @deck.id).empty? %>
-              <%= link_to "Add review", new_deck_review_path, class: "btn" %>
-            <% else %>
-              <%= link_to "Edit review", edit_deck_review_path(@review), class: "btn" %>
+            <% unless current_user.id == @deck.user.id  %>
+              <% if DeckReview.where(user_id: current_user.id, deck_id: @deck.id).empty?%>
+                <%= link_to "Add review", new_deck_review_path, class: "btn" %>
+              <% else %>
+                <%= link_to "Edit review", edit_deck_review_path(@review), class: "btn" %>
+              <% end %>
             <% end %>
           <% end %>
           <% if current_user.id == @deck.user.id  %>
@@ -55,6 +57,9 @@
               <%= link_to "", destroy_review_path(review.id),method: :delete, class: "far fa-trash-alt" %>
               <% end %>
             </div>
+          </div>
+          <div>
+            <hr style="width: 50%; margin: 6px auto;">
           </div>
           <% end %>
         </div>

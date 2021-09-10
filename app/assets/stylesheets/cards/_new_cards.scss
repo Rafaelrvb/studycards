@@ -2,9 +2,20 @@
   padding: 2px;
   margin-bottom: 8px;
   position: relative;
+  .btn{
+    color: white;
+    background-color: #16c79a;
+    &:hover {
+      background-color: #16c79bc0;
+    }
+
+  }
   .btn-update-delete {
     position: absolute;
     top: auto;
-    right: -160px;
+    right: -123px;
   }
 }
+#del-card{
+    margin: 20px 10px;
+  }
