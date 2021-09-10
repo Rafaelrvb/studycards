@@ -1,26 +1,32 @@
 
 <div class="bg-1">
   <div class="first-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwk8hef4l/image/upload/v1631247177/working_-_co%CC%81pia_j53udl.jpg); margin-top: none">
-      <div class="content">
+      <div style="margin-top:123px">
+        <div>
+          <h1>LEARN EFFECTIVELY</h1>
+        </div>
         <div class="slider-wrapper">
-          <div>
-            <h1>Achieve your</h1>
-          </div>
           <div class="slider">
-            <div class="slider-text1">goals!</div>
-            <div class="slider-text2">dreams!</div>
-            <div class="slider-text3">Whatever you want!</div>
+            <div class="slider-text1">Create</div>
+            <div class="slider-text2">Study</div>
+            <div class="slider-text3">Sell</div>
+          </div>
+          <div>
+            <h3> professional Flashcards!</h3>
           </div>
         </div>
       </div>
-      <div>
-        <h4 style="margin-right: 500px;   margin-botton: 1000px;
-        ">Revolusionize the way you learn with flashcards</h4>
+      <div class="landpage-btn-quote">
+        <div id="landpage-btn">
+          <%= link_to 'Create a card', new_path, class: 'btn btn-primary btn-lg m-4 ', class:"buttons-first" %>
+          <%= link_to 'Find a flashcard', search_path, class: 'btn btn-primary btn-lg ', class:"buttons-first" %>
+        </div>
+        <div id="landpage-quote">
+          <h4 class="text-right">Sophia Gosh:</h4>
+          <h4><span>"Studycards is the reason I'm a public attorney now!"</span></h4>
+        </div>
       </div>
-      <div class="float-left">
-        <%= link_to 'Create a card', new_path, class: 'btn btn-primary btn-lg m-4 ', class:"buttons-first" %>
-        <%= link_to 'Find a flashcard', search_path, class: 'btn btn-primary btn-lg ', class:"buttons-first" %>
-      </div>
+
   </div>
 </div>
 
