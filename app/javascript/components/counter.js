@@ -7,10 +7,12 @@ function animate(obj, initVal, lastVal, duration) {
 
   //pass the current timestamp to the step function
   const step = (currentTime) => {
-
+    console.log(startTime)
     //if the start time is null, assign the current time to startTime
     if (!startTime) {
       startTime = currentTime;
+
+      console.log(currentTime)
     }
 
     //calculate the value to be used in calculating the number to be displayed
@@ -38,16 +40,28 @@ let text3 = document.getElementById('0103');
 let text4 = document.getElementById('0104');
 let text5 = document.getElementById('0105');
 let text6 = document.getElementById('0106');
-let text7 = document.getElementById('0107');
+
 
 const load = () => {
-  animate(text1, 0, text1.innerHTML, 2500);
-  animate(text2, 0, text2.innerHTML, 2500);
-  animate(text3, 0, text3.innerHTML, 2500);
-  animate(text4, 0, text4.innerHTML, 2500);
-  animate(text5, 0, text5.innerHTML, 2500);
-  animate(text6, 0, text6.innerHTML, 2500);
-  animate(text7, 0, text7.innerHTML, 2500);
+  if (text1) { animate(text1, 0, text1.innerHTML, 2500);}
+  if (text2) { animate(text2, 0, text2.innerHTML, 2500);}
+  if (text3) {
+    animate(text3, 0, text3.innerHTML, 2500)
+  };
+  if (text4) {
+    animate(text4, 0, text4.innerHTML, 2500)
+  };
+  if (text5) {
+    animate(text5, 0, text5.innerHTML, 2500)
+  };
+  if (text6) {
+    animate(text6, 0, text6.innerHTML, 2500)
+  };
+
+
+
+
+
 }
 
 export { load };

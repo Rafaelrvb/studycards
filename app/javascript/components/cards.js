@@ -8,14 +8,11 @@ const showAnswer = () => {
   const btns = document.getElementById('2')
   if (button) {
     button.forEach((butt)=>{
-      butt.addEventListener('mouseover', (event) => {
-        span.classList.add("d-none")
-        })
-
         butt.addEventListener('click', (event) => {
         question.classList.toggle("d-none")
         answer.classList.toggle("d-none")
         btns.classList.toggle("d-none")
+
 
 
 

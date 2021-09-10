@@ -1,15 +1,17 @@
 .bg-1{
   background-color: rgb(233, 235, 238);
-  padding: 100px 0;
+
   background-size: cover;
-  padding-top: 40px;
+  padding-top: 50px;
 }
   .first-banner {
     background-size: cover;
     background-position: center;
-    padding-bottom: 400px;
+    height: 700px;
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgb(90, 87, 87);
+    text-align: center;
+    display: grid;
 
       h1{
       color: white;
@@ -24,6 +26,7 @@
       color: rgb(19, 18, 18);
       opacity: .7;
       font-size: 20px;
+
       }
      .buttons-first{
       padding: 40px ;
@@ -151,12 +154,13 @@
   font-size: 60px;
   font-weight: bold;
   font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
   font-weight: 600;
   font: bold;
 }
 
 .tird-banner{
-  background-color:#FFF7AE;
+  background-color:#16c79a;
   padding: 210px 0;
   background-size: cover;
   align-items: center;
