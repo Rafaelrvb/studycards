@@ -1,22 +1,24 @@
 <div class="container text-center">
+<h2>My collection</h2>
+<hr>
   <div class="my-collection row d-flex justify-content-between">
-    <div class="list-collection col-4">
-      <h1>My collection</h1>
+    <div class="list-collection col-4 p-3">
       <% var = -1 %>
       <% @deck_community.each do |decks| %>
         <div class="deck-item">
           <% var += 1  %>
-          <%= link_to "#{decks.deck.title} (#{decks.deck.availability})", deck_community_path(deck_community_id: decks, var: var), class: "btn btn-info" %>
+          <%= link_to "#{decks.deck.title} (#{decks.deck.availability})", deck_community_path(deck_community_id: decks, var: var), class: "btn" %>
         </div>
       <% end %>
     </div>
-    <div class="list-collection col-8">
+    <div class="deck-dashboard list-collection col-8">
       <% unless @deck_community.empty? %>
         <%= render 'dashboard', {var: params[:var]}  %>
       <% end %>
     </div>
-    <div class="card-collection col my-2">
-      <div class="row" style="justify-content:center;"><h4><strong><%= current_user.name %>'s</strong> Dashboard</h4></div>
+    <div class="card-collection col my-2 overall-dashboard">
+      <div class="row" style="justify-content:center;"><h3><%= current_user.name %>'s Progress</h3></div>
+      <hr>
       <div class="row" style="justify-content:space-around">
         <% unless @overall_info.nil? %>
           <%= render 'overall_dashboard' %>
