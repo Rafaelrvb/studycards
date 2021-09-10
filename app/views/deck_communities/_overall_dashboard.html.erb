@@ -1,12 +1,12 @@
 <div>
   <p>Sessions Completed</p>
-  <p><%= @overall_info[:number_of_sessions] %></p>
+  <span id="0104"><%= @overall_info[:number_of_sessions] %></span>
 </div>
   <div>
-  <p>Cards Completed:</p>
-  <span ><%=@overall_info[:cards_done]%></span> / <span id="0102"><%=@overall_info[:total_n_of_cards]%></span>
+  <p>Cards Completed</p>
+  <span><span id="0105"><%=@overall_info[:cards_done]%></span> / <%=@overall_info[:total_n_of_cards]%></span>
   </div>
 <div>
-  <p>Overall Knowledge:</p>
-  <p><%= @overall_info[:overall_grade] %></p>
+  <p>Overall Knowledge</p>
+  <span id="0106"><%= @overall_info[:overall_grade] %></span><span>%</span>
 </div>

@@ -35,11 +35,19 @@ function animate(obj, initVal, lastVal, duration) {
 let text1 = document.getElementById('0101');
 let text2 = document.getElementById('0102');
 let text3 = document.getElementById('0103');
+let text4 = document.getElementById('0104');
+let text5 = document.getElementById('0105');
+let text6 = document.getElementById('0106');
+let text7 = document.getElementById('0107');
 
 const load = () => {
   animate(text1, 0, text1.innerHTML, 2500);
   animate(text2, 0, text2.innerHTML, 2500);
-  animate(text3, 100, 12, 5000);
+  animate(text3, 0, text3.innerHTML, 2500);
+  animate(text4, 0, text4.innerHTML, 2500);
+  animate(text5, 0, text5.innerHTML, 2500);
+  animate(text6, 0, text6.innerHTML, 2500);
+  animate(text7, 0, text7.innerHTML, 2500);
 }
 
 export { load };
