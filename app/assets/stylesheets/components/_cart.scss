@@ -19,19 +19,21 @@
   --------------------*/
   .promocode {
     padding: 20px;
-    background-color: rgb(136, 101, 101) ;
-    width: 50%;
-    margin: 0 auto;
+    background-color: #F8F1F1 ;
+    width: 70%;
+    margin: 30px auto;
     text-align: center;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+
   }
   .btn {
-
+      margin-top: 40px;
       background-color:#16c79a;
       font-weight: bold;
       color:white;
       letter-spacing: 00.05rem;
       &:hover {
-        background-color:#16c79bbe;
+        background-color:#27a082;
       }
 
 
@@ -55,7 +57,7 @@
       font-weight: bold;
       border: none;
       box-shadow: none;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      text-shadow: 2px 1px 6px rgba(0, 0, 0, 0.2);
       margin-top: 90px;
 
       & .fa {
@@ -82,6 +84,7 @@
   Credit Card
   --------------------*/
   .credit-card-box {
+    margin-bottom: 50px;
     perspective: 1000;
     width: 400px;
     height: 280px;
@@ -107,7 +110,7 @@
       font-family: Inconsolata;
       top: 0;
       left: 0;
-      background-image: url("10offf.png");
+      background-image: url("https://res.cloudinary.com/dwk8hef4l/image/upload/v1631253128/sconto_discount_holiday_vacanza_agriturismo_italy_farmholiday_piscina_lastminute_pool_restaurant_vacation_beach_ristorante_bojutz.png");
 
       box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
 
