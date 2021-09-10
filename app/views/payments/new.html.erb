@@ -1,66 +1,65 @@
-              <div class="payment">
 
-                <div class="center-wrapper">
-                  <div class="content">
-                  <nav>
-                    <a href="#" class="menu">Menu</a>
-                    <h1 class="logo">DiveShop</h1>
-                    <div class="icons">
-                      <i class="fas fa-search"></i>
-                      <i class="fas fa-shopping-bag"></i><span style="margin-left: 0.3rem;">1</span>
-                    </div>
-                  </nav>
+<div  class="crazy" style="background-color: #F3F1F5; padding-bottom: 350px"  >
+  <div class="row justify-content-center" style="background-color: #F3F1F5">
+    <div class="col-12 col-sm-4" style="flex: 0 0 50%; max-width: 50%;background-color: white;  margin-top: 120px">
+      <nav>
+      <h1 class="logo">StudyShop</h1>
+        <div class="icons">
+          <i class="fas fa-shopping-bag"></i><span style="margin-left: 0.3rem;"></span>
+        </div>
+      </nav>
 
-                  <div class="bag">
-                    <p class="bag-head"><span style="text-transform: uppercase">Your Bag</span> - 1 item</p>
-                  </div>
-                  <div class="bag-product">
-                    <div class="image">
-                      <img src="https://www.elenanelmes.com/images/test/ui/suunto_d4i_novo_sun_front_dive_metric.png" class="product-image">
-                    </div>
-                    <div class="description">
-                      <p class="product-code small muted">Product code: SS022592000</p>
-                      <h1>Suunto D4i Novo</h1>
-                      <p>Sun</p>
-                      <p class="description-text">An easy-to-use dive computer with freedive mode and air integration.</p>
-                      <p style="margin-bottom: 0.5rem;">One Size</p>
-                      <h2>$825.00</h2>
 
-                    </div>
-                  </div>
-                  <div class="bag-total">
-                    <div class="subtotal">
-                      <p class="small">Subtotal:</p>
-                      <p class="small">$825.00</p>
-                    </div>
+      <br>
 
-                    <div class="total">
-                      <h3>Total:</h3>
-                      <h3>$825.00</h3>
-                    </div>
-                    <div class="promo-checkbox">
-                      <input type="checkbox" name="promo-check" checked>
-                      <label for="promo-check">I have a promo code</label>
-                    </div>
-                    <div class="promo-code">
-                      <input type="text" name="promo-checkbox" placeholder="Enter your promo code here" checked>
-                      <button class="apply">Apply</button>
-                    </div>
-                     <button id="pay" class="btn btn-primary">Pay</button>
+      <div class="bag-product">
+        <div>
+          <% if @order.deck.deck_pic.attached? %>
+            <% #cloudinary image, transformation, css configs %>
+            <%= cl_image_tag(@order.deck.deck_pic.key,
+            :transformation=>[{:width=>150, :height=>150, :crop=>"thumb"}])%>
+          <% else %>
+            <%= cl_image_tag("cards_ico_m3jslu",
+                :transformation=>[{:width=>150, :height=>150, :crop=>"thumb"}])%>
+          <% end %>
+        </div>
 
-                      <script src="https://js.stripe.com/v3/"></script>
-                      <script>
-                      const paymentButton = document.getElementById('pay');
-                      paymentButton.addEventListener('click', () => {
-                        const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-                        stripe.redirectToCheckout({
-                          sessionId: '<%= @order.checkout_session_id %>'
-                        });
-                      });
-                    </script> -->
-                  </div>
-                  <div class="help">
-                    <p>Need help? Call free +55 21 6983-9321</p>
-                  </div>
-                </div>
-              </div>
+        <div sty  le="margin: 3px">
+          <p class="product-code small muted">Product code: <%=@order.deck_id %></p>
+          <br>
+          <h1><%=@order.deck.title%></h1>
+          <br>
+          <p class="description-text"><%=@order.deck.description%></p>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="bag-total">
+
+      <div class="total">
+        <h3>Total:</h3>
+        <h3><%= "$ #{@order.deck.price} "%></h3>
+      </div>
+
+
+      <button id="pay" class="btn">Pay</button>
+
+
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @order.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+    <div class="help">
+      <p>Need help? Call free +55 21 6983-9321</p>
+    </div>
+  </div>
+</div>

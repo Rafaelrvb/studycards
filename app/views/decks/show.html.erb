@@ -5,7 +5,9 @@
     <div class="col-12 col-sm-4" style="flex: 0 0 50%; max-width: 50%;">
      <div class="form-show-deck">
 
+
         <h2><%= @deck.title %></h2>
+
         <h5>From: <%= User.find(@deck.user_id).name %></h5>
         <hr>
         <h5><%= @deck.description %></h5>
