@@ -1,45 +1,47 @@
 <div class="container text-center" >
-  <h2><%= @decks.count %> decks matches your search!</h2>
+  <h2 ><span id="0101" class="search-header"><%= @decks.count %></span> decks matches your search!</h2>
+
   <hr style="margin:21px">
 
   <% @decks.each do |deck| %>
     <div class="card-product">
-      <% if deck.deck_pic.attached? %>
-        <% #cloudinary image, transformation, css configs %>
-        <%= cl_image_tag(deck.deck_pic.key,
-        :transformation=>[{:width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"thumb"}],
-        class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false )%>
-      <% else %>
-        <%= cl_image_tag("cards_ico_m3jslu",
-            :transformation=>[{:width=>100, :height=>80, :gravity=>"face", :radius=>"max", :crop=>"thumb"}],
-             data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false )%>
-      <% end %>
+        <div class="card-image">
+          <% if deck.deck_pic.attached? %>
+            <% #cloudinary image, transformation, css configs %>
+            <%= cl_image_tag(deck.deck_pic.key,
+            :transformation=>[{:width=>100, :height=>100, :gravity=>"face", :radius=>"max", :crop=>"thumb"}],
+            class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false )%>
+          <% else %>
+            <%= cl_image_tag("cards_ico_m3jslu",
+                :transformation=>[{:width=>100, :height=>80, :gravity=>"face", :radius=>"max", :crop=>"thumb"}],
+                data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false )%>
+          <% end %>
+        </div>
         <div class="card-product-infos">
+          <div class="title-author">
+            <h5><%= link_to "#{deck.title}", show_path(deck) %></h5>
+            <p><%= Card.where(deck_id: deck.id).count %> cards</p>
+            <p><%= User.find(deck.user_id).name %></p>
+          </div>
+
+
           <div >
-            <%= link_to "#{deck.title}", show_path(deck) %>
+            <p id="price"><%= deck.price.to_i.zero? ? "Free" : "$#{deck.price}" %></p>
           </div>
 
-          <div style="padding-left: 10px">
-            <%= User.find(deck.user_id).name %>
+          <div>
+            <p>Used by <%= DeckCommunity.where(deck_id: Deck.last.id).count %><br>studycardians!</p>
           </div>
 
-          <div style="padding-left: 10px">
-            <%= Card.where(deck_id: deck.id).count %>
-          </div>
-
-          <div style="padding-left: 10px">
-            <%= deck.price %>
-          </div>
-
-          <div style="padding-left: 70px">
+          <div>
             <% rating = 0 %>
             <% deck.deck_reviews.each do |review|  %>
               <% rating += review.rating %>
             <% end %>
             <% if deck.deck_reviews.empty?%>
-            --
+            <p>no reviews yet</p>
             <% else %>
-              <%= "⭐"*(rating/deck.deck_reviews.count) %>
+            <p><%= "⭐"*(rating/deck.deck_reviews.count)%> ( <%= deck.deck_reviews.count%> )</p>
             <% end %>
           </div>
         </div>
