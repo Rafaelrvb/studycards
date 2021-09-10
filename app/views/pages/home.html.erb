@@ -23,7 +23,7 @@
         </div>
         <div id="landpage-quote">
           <h4 class="text-right">Sophia Gosh:</h4>
-          <h4><span>"Studycards is the reason I'm a public attorney now!"</span></h4>
+          <h4>"Studycards is the reason I'm a public attorney now!"</h4>
         </div>
       </div>
 
@@ -118,22 +118,56 @@
 
 
 
-
-
-  <div class="middle-banner">
+    <div class="middle-banner">
       <div class="text-center">
-      <h1>How it works?</h1>
+
+      </div>
+        <div class="d-flex container align-items-center ">
+          <div class="">
+            <h1>Proven as the most effectiv way to memorize anything</h1>
+          </div>
+          <div class="">
+            <div id="">
+              <%= cl_image_tag("albert-einstein-se-1128a_ffaqox",
+                  :transformation=>[{:width=>100, :height=>200}],
+                  class:"einstein" )%>
+                  <h3>Space repetition is  an ancient technik for learning</h3>
+                  <%= link_to 'Try it now!', search_path, class: 'btn btn-primary btn-lg mt-5', class:"buttons-first" %>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <div class="tird-banner">
+      <div class="text-center">
       </div>
         <div class="d-flex container align-items-center justify-content-around">
-          <div class= "middle-gif card-sample wrapper">
-            <iframe id="slide" src="https://giphy.com/embed/IPbS5R4fSUl5S" width="384" height="213" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+          <div class= "">
+            <%= cl_image_tag("giphy_ggy9zs",
+                  class:"gifcards")%>
           </div>
-          <div class="wrapper2">
-            <div id="slide2">
-                <h3>Using the space repetition technik</h3>
-                <h3>You can learn anything</h3>
-                <h3>In record time!</h3>
-                <%= link_to 'Try it now!', search_path, class: 'btn btn-primary btn-lg mt-5' %>
+          <div class="">
+            <div style="margin-right: 30px">
+              <div class="d-flex align-items-center m-3">
+                <i class="fas fa-rocket m-4"></i>
+                <h3>Easy and simple to use</h3>
+              </div>
+
+              <div class="d-flex align-items-center m-3 ">
+                <i class="fas fa-book m-5"></i>
+                <h3>High quality flashcards</h3>
+              </div>
+
+              <div class="d-flex align-items-center m-3">
+                <i class="fas fa-money-bill-alt m-4"></i>
+                <h3>Make money with your flashcards</h3>
+              </div>
+
+              <div class="d-flex align-items-center m-3">
+                <i class="fas fa-chart-line m-4"></i>
+                <h3>Track your progress</h3>
+              </div>
+                <%= link_to 'Try it now!', search_path, class: 'btn btn-primary btn-lg mt-5', class:"buttons-first" %>
             </div>
           </div>
         </div>
@@ -141,9 +175,6 @@
 
   </div>
 
-  <div class="tird-banner">
-    <h1>What are specialists are saying?</h1>
-  </div>
 
   <div class="footer">
       <div class="footer-links">
