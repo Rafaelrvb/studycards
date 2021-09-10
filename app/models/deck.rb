@@ -3,6 +3,7 @@ class Deck < ApplicationRecord
   has_many :cards, dependent: :destroy
   has_many :deck_communities, dependent: :destroy
   has_many :deck_reviews, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   has_one_attached :deck_pic
 
