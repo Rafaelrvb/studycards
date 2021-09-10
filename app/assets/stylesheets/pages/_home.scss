@@ -68,6 +68,11 @@
 
 }
 
+.frontpage-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
 
 
 
@@ -223,8 +228,8 @@
 }
 
 .gifcards{
-  height: 295px;
-  width: 528px;
+  height: 340px;
+    width: 604px;
   box-shadow: 0px 4px 9px lightgray;
 
 }

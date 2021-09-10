@@ -122,17 +122,22 @@
       <div class="text-center">
 
       </div>
-        <div class="d-flex container align-items-center ">
+        <div class="d-flex container">
           <div class="">
-            <h1>Proven as the most effectiv way to memorize anything</h1>
+            <h1>Proven as the most effective way to memorize anything</h1>
+
+
           </div>
           <div class="">
             <div id="">
               <%= cl_image_tag("albert-einstein-se-1128a_ffaqox",
                   :transformation=>[{:width=>100, :height=>200}],
                   class:"einstein" )%>
-                  <h3>Space repetition is  an ancient technik for learning</h3>
-                  <%= link_to 'Try it now!', search_path, class: 'btn btn-primary btn-lg mt-5', class:"buttons-first" %>
+                  <figcaption style="margin-top: 10px;">
+                    <h3>Space repetition is an ancient method of learning</h3>
+                  </figcaption>
+
+
             </div>
           </div>
         </div>
@@ -141,33 +146,33 @@
   <div class="tird-banner">
       <div class="text-center">
       </div>
-        <div class="d-flex container align-items-center justify-content-around">
+        <div class="d-flex align-items-center justify-content-between" style="margin: 30px 200px;">
           <div class= "">
             <%= cl_image_tag("giphy_ggy9zs",
                   class:"gifcards")%>
           </div>
           <div class="">
-            <div style="margin-right: 30px">
-              <div class="d-flex align-items-center m-3">
-                <i class="fas fa-rocket m-4"></i>
+            <div>
+              <div class="align-items-center frontpage-grid ">
+                <i class="fas fa-rocket m-4  text-center"></i>
                 <h3>Easy and simple to use</h3>
               </div>
 
-              <div class="d-flex align-items-center m-3 ">
-                <i class="fas fa-book m-5"></i>
+              <div class="align-items-center frontpage-grid ">
+                <i class="fas fa-book m-4  text-center"></i>
                 <h3>High quality flashcards</h3>
               </div>
 
-              <div class="d-flex align-items-center m-3">
-                <i class="fas fa-money-bill-alt m-4"></i>
+              <div class="align-items-center frontpage-grid ">
+                <i class="fas fa-money-bill-alt m-4  text-center"></i>
                 <h3>Make money with your flashcards</h3>
               </div>
 
-              <div class="d-flex align-items-center m-3">
-                <i class="fas fa-chart-line m-4"></i>
+              <div class="align-items-center frontpage-grid">
+                <i class="fas fa-chart-line m-4  text-center"></i>
                 <h3>Track your progress</h3>
               </div>
-                <%= link_to 'Try it now!', search_path, class: 'btn btn-primary btn-lg mt-5', class:"buttons-first" %>
+
             </div>
           </div>
         </div>
