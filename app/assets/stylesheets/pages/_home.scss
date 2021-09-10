@@ -7,9 +7,11 @@
   .first-banner {
     background-size: cover;
     background-position: center;
-    padding-bottom: 400px;
+    height: 700px;
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgb(90, 87, 87);
+    text-align: center;
+    display: grid;
 
       h1{
       color: white;
@@ -24,6 +26,7 @@
       color: rgb(19, 18, 18);
       opacity: .7;
       font-size: 20px;
+
       }
      .buttons-first{
       padding: 40px ;

@@ -10,7 +10,8 @@ const showAnswer = () => {
     button.forEach((butt)=>{
       butt.addEventListener('mouseover', (event) => {
         span.classList.add("d-none")
-        })
+        console.log(butt)
+        });
 
         butt.addEventListener('click', (event) => {
         question.classList.toggle("d-none")
