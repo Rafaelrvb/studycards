@@ -20,20 +20,19 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 800;
       font: bold;
+      margin-top: 100px;
 
       }
+
       h3 {
         color: white;
-        opacity: 0.7;
+        opacity: 0.9;
         margin: 0 10px;
-
-
-
       }
 
       h4{
       color: rgb(255, 255, 255);
-      opacity: .3;
+      opacity: .7;
 
 
       }
@@ -177,27 +176,38 @@
 
 
 .middle-banner {
-  background-color: #F8F1F1;
-  padding: 100px 0;
   background-size: cover;
 }
 
 .middle-banner h1 {
-  color: black;
-  margin-bottom: 110px;
-  font-size: 60px;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 1px;
-  font-weight: 600;
-  font: bold;
+  color: rgb(87, 84, 84);
+      font-size: 70px;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font: bold;
+      width: 50%;
 }
 
 .tird-banner{
-  background-color:#16c79a;
-  padding: 210px 0;
+  background-color:#F8F1F1;
+  padding-bottom: 80px;
+
   background-size: cover;
   align-items: center;
+  h3{
+    color: rgb(27, 26, 26);
+      font-size: 45px;
+      font-weight: bold;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font: bold;
+  }
+  .fas{
+  color: #16C79A;
+  font-size: 50px;
+}
+
 }
 
 .card-sample{
@@ -205,4 +215,16 @@
 }
 .items-div{
   align-items: center;
+}
+
+.einstein{
+  height: 510px;
+  width: 380px;
+}
+
+.gifcards{
+  height: 295px;
+  width: 528px;
+  box-shadow: 0px 4px 9px lightgray;
+
 }
