@@ -1,23 +1,20 @@
 <div class="container">
-  <h2><%= @deck_community.deck.title %></h2>
-  <div>
-    <%= link_to "Back to My Collections", deck_community_path(current_user), class: "btn btn-sm btn-info" %>
-  </div>
+  <h2 class="text-center"><%= @deck_community.deck.title %></h2>
+  <hr>
   <div class="text-center">
     <div class="headers">
       <% cards = @deck_community.deck.cards %>
-      <p><%= cards.find_index(@card) + 1 %> of <%= cards.count %></p>
       <p>Session: <%= @session.sessions %></p>
+      <p><%= cards.find_index(@card) + 1 %> of <%= cards.count %></p>
+
     </div>
-    <div class="cartao card-front" id = "0" >
+    <div class="cartao card-front btn-show" id = "0" >
       <p><%= @card.front_page %></p>
     </div>
-    <div class="cartao card-back d-none" id = "1" >
+    <div class="cartao card-back btn-show d-none" id = "1" >
       <p><%= @card.back_page %></p>
     </div>
-    <div id="btn-show" class="btn btn-primary">
-      Flip!
-    </div>
+    <span id="flip" class="d-none">Flip!</span>
     <div class="cartao button-grid d-none" id = "2" >
       <div class="btn-grid"><%= link_to "0%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 0, session: @session ), method: :post, class: "btn btn-danger" %></div>
       <div class="btn-grid"><%= link_to "25%", create_study_path(deck_community_id: @deck_community.id, card_id: @card.id, grade: 25, session: @session ), method: :post, class: "btn btn-danger" %></div>
