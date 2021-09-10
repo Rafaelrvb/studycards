@@ -7,7 +7,9 @@
   .first-banner {
     background-size: cover;
     background-position: center;
-    padding-bottom: 270px;
+    padding-bottom: 400px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgb(90, 87, 87);
 
       h1{
       color: white;
@@ -23,6 +25,10 @@
       opacity: .7;
       font-size: 20px;
       }
+     .buttons-first{
+      padding: 40px ;
+      background-color: lightgreen;
+    }
 
   }
 
@@ -141,8 +147,12 @@
 
 .middle-banner h1 {
   color: black;
-  font-size: 60px;
   margin-bottom: 110px;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font: bold;
 }
 
 .tird-banner{
