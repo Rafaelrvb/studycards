@@ -82,14 +82,14 @@
 
                     <fieldset>
                       <%# <label for="card-holder">Congratulations, you got a 10% discount, just click on purcharse to validate it.</label> %>
-                      <div class="promocode">Congratulations, you got a 10% discount, just click on purcharge to validate it.</div>
+                      <div class="promocode">Congratulations, you got a 10% discount, just click on purcharse to validate it.</div>
                     </fieldset>
 
 
                   </form>
                   <%= form_tag orders_path do %>
                     <%= hidden_field_tag 'deck_id', @deck.id %>
-                    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+                    <%= submit_tag 'Purchase', class: 'btn' %>
                   <% end %>
 
                 </div>
