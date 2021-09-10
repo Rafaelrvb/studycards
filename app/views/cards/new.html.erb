@@ -1,5 +1,6 @@
 <div class="container">
-  <h3><%= @cards.nil? ? "Creating" : "Editing" %> <%= @deck.title %></h3>
+  <h2 class="text-center"><%= @deck.title %></h2>
+  <hr>
   <div>
   <% unless @cards.nil? %>
     <% @cards.each do |card| %>
@@ -11,9 +12,9 @@
             <div class="col">
               <%= f.input :back_page, label: false %>
             </div>
-            <div class="btn-update-delete">
-              <%= f.button :submit, value: 'Update', class: 'btn btn-sm btn-primary'  %>
-              <%= link_to 'Delete', destroy_card_path(card.id), :confirm => 'Are you sure?', :method => :delete, class: 'btn btn-sm btn-primary' %>
+            <div class="btn-update-delete ">
+              <%= f.button :submit, value: 'Update', class: 'btn btn-sm '  %>
+              <%= link_to "", destroy_card_path(card.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "far fa-trash-alt", id: "del-card" %>
             </div>
           <% end %>
         </div>
@@ -31,8 +32,8 @@
           <%= f.input :back_page, label: false, placeholder: 'Back' %>
         </div>
       </div>
-        <div class="text-center my-3">
-          <%= f.button :submit, class: 'btn btn-primary' %>
+        <div class="text-center my-3 deck-show-btns">
+          <%= f.button :submit, class: 'btn' %>
         </div>
     <% end %>
   </div>

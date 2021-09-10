@@ -1,4 +1,6 @@
-
+.list-collection {
+  min-height: 330px;
+}
 .form-show-deck {
     background-color: white;
     margin-top: 120px;
@@ -7,7 +9,7 @@
     box-shadow: 0px 2px 16px lightgray;
     h2{
       font-weight: bold ;
-      font-size: 40px;
+
       margin-bottom: 60px;
       text-align: center;
     }

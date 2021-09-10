@@ -1,16 +1,18 @@
 <div class="container text-center">
-  <div class="my-collection row d-flex justify-content-between">
-    <div class="list-collection col-4">
-      <h1>My Marketplace</h1>
+  <h2>My Marketplace</h2>
+  <hr>
+  <div class="my-collection row d-flex justify-content-between" style="min-height: 330px;">
+    <div class="list-collection col-4 p-3">
+
       <% var = -1 %>
       <% @my_deck_market.each do |deck| %>
         <div class="deck-item">
           <% var += 1  %>
-          <%= link_to "#{deck.title}", marketplace_path(var: var), class: "btn btn-info" %>
+          <%= link_to "#{deck.title}", marketplace_path(var: var), class: "btn" %>
         </div>
       <% end %>
     </div>
-    <div class="list-collection col-8">
+    <div class="list-collection col-8  deck-dashboard">
       <% unless @my_deck_market.empty? %>
         <%= render 'dashboard_market', {var: params[:var]}  %>
       <% end %>

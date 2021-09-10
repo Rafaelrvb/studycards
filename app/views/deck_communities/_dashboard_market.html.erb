@@ -1,12 +1,11 @@
   <div class="card-collection col">
     <div id="deck-info-dashboard" class="row">
-      <div>Deck: <strong><%= @my_deck_market[var.to_i].title%></strong></div>
-      <div>N° of cards: <%= @my_deck_market[var.to_i].cards.count%></div>
-
+      <p>Deck: <strong><%= @my_deck_market[var.to_i].title%></strong></p>
+      <p>N° of cards: <%= @my_deck_market[var.to_i].cards.count%></p>
     </div>
 
     <div id="deck-session-dashboard" class="row">
-      <div style="text-align: justify">
+      <div id="deck-session-info" style="text-align: justify">
         <p>Total times sold: <%= DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).count - 1 %></p>
         <p>Mean price paid: $<%= @my_deck_market[var.to_i].price  %></p>
         <p>Total earnings: <%= (DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).count - 1) * @my_deck_market[var.to_i].price  * 0.9 %> </p>
@@ -14,10 +13,10 @@
         <p>Last buyer: <%= User.find(DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).last.user_id).name  %></p>
         <% end %>
       </div>
-      <div>
+      <div id="btns" style="top:9px; right:30px">
           <%= simple_form_for @my_deck_market[var.to_i], url: update_deck_path(@my_deck_market[var.to_i]) do |f| %>
-            <%= f.input :price %>
-            <%= f.button :submit, value: 'Update price', class: 'btn btn-info' %>
+            <%= f.input :price, label: false%>
+            <%= f.button :submit, value: 'Update price', class: 'btn' %>
           <% end %>
       </div>
     </div>
