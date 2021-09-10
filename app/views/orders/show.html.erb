@@ -1,15 +1,99 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col-md-3"><%= "oi"%></div>
-    <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+
+
+<div class="text-center container">
+  <h2>Thanks for your order!</h2>
+  <br>
+  <h5>You can find your new flahscards in <%= link_to 'My collection', deck_community_path, style: "color: black" %><h5>
+  <hr>
+
+</div>
+
+<div class="Payment">
+<div class="crazy" style=" padding-bottom: 350px"  >
+  <div class="row justify-content-center" style="">
+    <div class="col-12 col-sm-4" style="flex: 0 0 50%; max-width: 50%;background-color: white;  margin-top: 120px">
+      <nav>
+      <h1 class="logo">Studycards's Shop</h1>
+        <div class="icons">
+          <i class="fas fa-shopping-bag"></i><span style="margin-left: 0.3rem;"></span>
+        </div>
+      </nav>
+
+
+      <br>
+
+      <div class="bag-product">
+        <div style="margin: auto">
+          <% if @order.deck.deck_pic.attached? %>
+            <% #cloudinary image, transformation, css configs %>
+            <%= cl_image_tag(@order.deck.deck_pic.key,
+            :transformation=>[{:width=>150, :height=>150, :crop=>"thumb"}])%>
+          <% else %>
+            <%= cl_image_tag("cards_ico_m3jslu",
+                :transformation=>[{:width=>150, :height=>150, :crop=>"thumb"}])%>
+          <% end %>
+        </div>
+
+        <div style="margin: 3px">
+        <h1>Order #<%= @order.id %> <small><span class="badge badge-primary" ></span></small></h1>
       <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>DECK</strong> <%= @order.deck.title %> [<%= @order.deck_sku %>]</li>
-        <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @order.amount %></li>
+        <li style="padding-bottom:10px"><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
+
+
         </li>
       </ul>
 
+          <p class="statuspay" style="background-color: green"><%="State :  #{@order.state.capitalize}" %></p>
+          <br>
+          <p class="product-code small muted">Product code: <%=@order.deck_id %></p>
+          <br>
+          <hr>
+          <br>
+          <h1><%=@order.deck.title%></h1>
+          <br>
+          <p class="description-text"><%=@order.deck.description%></p>
+        </div>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div class="bag-total">
+
+      <div class="total">
+        <h3>SubTotal:</h3>
+        <h3><%= "$ #{@order.deck.price} "%></h3>
+      </div>
+      <div class="total">
+        <h3>Promocode:</h3>
+        <h3><%= "- $#{@order.deck.price*(0.1)} "%></h3>
+        <% promocode = @order.deck.price*(0.1) %>
+      </div>
+      <hr>
+      <br>
+      <div class="total">
+        <h3>Total:</h3>
+        <h3><%= "$ #{@order.deck.price - promocode} "%></h3>
+      </div>
+
+      <hr>
+      <br>
+
+
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        const paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @order.checkout_session_id %>'
+          });
+        });
+      </script>
+    </div>
+    <div class="help">
+      <p>Need help? Call free +55 21 6983-9321</p>
     </div>
   </div>
+</div>
 </div>
