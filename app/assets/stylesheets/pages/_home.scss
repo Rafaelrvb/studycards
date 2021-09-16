@@ -147,10 +147,17 @@
   }
 }
 
+// tird banner
+
+.bg-3{
+  background-color:#F8F1F1;
+  padding: 30px 0px;
+}
+
 .tird-banner{
   background-color:#F8F1F1;
-  padding-bottom: 80px;
-  margin: 30px 200px;
+  padding-bottom: 30px;
+  margin: 30px 100px;
   background-size: cover;
   align-items: center;
   h3{
@@ -212,6 +219,10 @@
       font-size: 25px;
     }
 
+    .gifcards{
+     margin-bottom: 35px;
+    }
+
     .middle-banner{
       h1{
         font-size: 40px;
@@ -219,12 +230,25 @@
       }
       .container {
         display: block; /* or inline-flex */
+        margin-top: 60px;
+      }
+
+      .einstein{
+      height: 100%;
+      width: 100%;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      height: 408px;
+      width: 304px;
       }
     }
+
+
     .tird-banner{
       margin: 0px;
       .container {
         display: block; /* or inline-flex */
+        margin-top: 40px;
       }
       .gifcards{
         width: 100%;
@@ -235,10 +259,6 @@
       }
     }
 
-    .einstein{
-      height: 100%;
-      width: 100%;
-    }
 
     .landpage-btn-quote {
 
