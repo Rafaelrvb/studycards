@@ -81,6 +81,7 @@
 
 
   }
+
   .btn{
     font-weight: bold;
     width: 100%;
@@ -103,3 +104,26 @@
 
 
 }
+
+@media (max-width: 789px)
+  {
+    #deck-session-dashboard{
+      display:flex;
+      justify-content: space-around;
+      #deck-session-info{
+        position: relative;
+        top:auto;
+        left:auto;
+      }
+      #btns{
+        position: relative;
+        top:auto;
+        right:auto;
+        margin: 8px;
+
+      }
+    }
+    p {
+      margin: 0;
+    }
+  }
