@@ -13,7 +13,7 @@
         <p>Last buyer: <%= User.find(DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).last.user_id).name unless User.find(DeckCommunity.where(deck_id: @my_deck_market[var.to_i]).last.user_id).name == current_user.name  %></p>
         <% end %>
       </div>
-      <div id="btns" style="top:9px; right:30px">
+      <div id="btns">
           <%= simple_form_for @my_deck_market[var.to_i], url: update_deck_path(@my_deck_market[var.to_i]) do |f| %>
             <%= f.input :price, label: false%>
             <%= f.button :submit, value: 'Update price', class: 'btn' %>

@@ -2,7 +2,7 @@
 <h2>My collection</h2>
 <hr>
   <div class="my-collection row d-flex justify-content-between">
-    <div class="list-collection col-4 p-3">
+    <div class="list-collection col-12 col-lg-4 p-3">
       <% var = -1 %>
       <% @deck_community.each do |decks| %>
         <div class="deck-item">
@@ -11,7 +11,7 @@
         </div>
       <% end %>
     </div>
-    <div class="deck-dashboard list-collection col-8">
+    <div class="deck-dashboard list-collection col-12 col-lg-8">
       <% unless @deck_community.empty? %>
         <%= render 'dashboard', {var: params[:var]}  %>
       <% end %>
