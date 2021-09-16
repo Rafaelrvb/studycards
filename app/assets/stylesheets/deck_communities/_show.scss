@@ -59,22 +59,18 @@
 }
 
 #deck-session-dashboard{
-  position: relative;
+
   margin: inherit;
   padding: 8px;
+  display: flex;
+  justify-content: space-around;
   #deck-session-info {
-    position: absolute;
-    top: 9px;
-    left: 4px;
     text-align: justify;
     padding: 20px 60px;
     box-shadow: 0px 0px 18px lightgrey;
   }
   #btns {
     display: grid;
-    position: absolute;
-    top: 16px;
-    right: 110px;
     gap: 5px;
     border: dashed 1px lightgrey;
     padding: 20px;
@@ -105,22 +101,11 @@
 
 }
 
-@media (max-width: 789px)
+@media (max-width: 998px)
   {
     #deck-session-dashboard{
-      display:flex;
-      justify-content: space-around;
-      #deck-session-info{
-        position: relative;
-        top:auto;
-        left:auto;
-      }
       #btns{
-        position: relative;
-        top:auto;
-        right:auto;
         margin: 8px;
-
       }
     }
     p {
