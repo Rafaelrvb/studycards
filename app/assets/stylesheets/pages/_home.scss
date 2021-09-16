@@ -47,13 +47,13 @@
 
 .landpage-btn-quote {
   position:relative;
-  #landpage-btn{
+  .landpage-btn{
     position:absolute;
     top:90%;
     left: 20%;
   }
 
-  #landpage-quote{
+  .landpage-quote{
     position:absolute;
     bottom: 0px;
     right: 3%;
@@ -81,10 +81,6 @@
   margin-top: 50px;
 }
 
-.slider{
-  height: 50px;
-
-}
 .slider-text1 {
   background-color: lightgreen;
   animation: slide 5s linear infinite;
@@ -107,7 +103,8 @@
 }
 
 .slider{
-  height: 50px;
+  height: 60px;
+  width: 160px ;
   padding-left:15px;
   overflow: hidden;   /* hide the text outside the slider div area */
 }
@@ -197,18 +194,22 @@
    .first-banner{
      height: 550px;
      h1{
-       font-size: 50px;
+       font-size: 45px;
        margin-top: 0px;
       }
       h3{
         font-size: 20px;
       }
       .buttons-first{
-        padding: 30px;
+        padding: 20px;
       }
       h4{
         display: none;
       }
+    }
+
+    .slider-wrapper {
+      font-size: 25px;
     }
 
     .middle-banner{
@@ -237,6 +238,15 @@
     .einstein{
       height: 100%;
       width: 100%;
+    }
+
+    .landpage-btn-quote {
+
+      .landpage-btn{
+        position:absolute;
+        top:80%;
+        left: 6%;
+      }
     }
   }
 
