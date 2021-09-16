@@ -1,117 +1,32 @@
 
-<div class="bg-1">
-  <div class="first-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwk8hef4l/image/upload/v1631250509/working_rgwjve.png); margin-top: none">
-      <div class="content">
-        <div class="slider-wrapper">
-          <div>
-            <h1>Achieve your</h1>
-          </div>
-          <div class="slider">
-            <div class="slider-text1">goals!</div>
-            <div class="slider-text2">dreams!</div>
-            <div class="slider-text3">Whatever you want!</div>
+  <div class="bg-1">
+    <div class="first-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwk8hef4l/image/upload/v1631250509/working_rgwjve.png); margin-top: none">
+        <div class="content">
+          <div class="row">
+            <div class="slider-wrapper">
+              <div>
+                <h1>Achieve your</h1>
+              </div>
+              <div class="slider">
+                <div class="slider-text1">goals!</div>
+                <div class="slider-text2">dreams!</div>
+                <div class="slider-text3">Whatever you want!</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div>
-        <h4 style="margin-right: 500px;   margin-botton: 1000px;
-        ">Revolusionize the way you learn with flashcards</h4>
-      </div>
-      <div class="float-left">
-        <%= link_to 'Create a card', new_path, class: 'btn btn-primary btn-lg m-4 ', class:"buttons-first" %>
-        <%= link_to 'Find a flashcard', search_path, class: 'btn btn-primary btn-lg ', class:"buttons-first" %>
-      </div>
-  </div>
-</div>
 
+        <div class="row">
+          <h4 style="margin-right: 500px;   margin-botton: 1000px;
+          ">Revolusionize the way you learn with flashcards</h4>
+        </div>
 
-
-
-
-
-
-
-
-
-<%#
-  <div id="carouselExampleFade" class="carousel slide carousel-fade container" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-interval="2000" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwk8hef4l/image/upload/v1630942405/jpfup2kyxit981lhlaprxwijil8n.jpg)">
-         <div class="carousel-captionn">
-           <div class="content">
-              <div class="slider-wrapper">
-                  <div>
-                    <h1>Achieve your</h1>
-                  </div>
-                  <div class="slider">
-                    <div class="slider-text1">goals!</div>
-                    <div class="slider-text2">dreams!</div>
-                    <div class="slider-text3">something!</div>
-                  </div>
-              </div>
-            </div>
-                <p>Revolusionize the way you learn</p>
-                <%= link_to 'Create a card', new_path, class: 'btn btn-primary btn-lg mt-5' %>
-               <%#  <%= link_to 'Find a flashcard', search_path, class: 'btn btn-primary btn-lg mt-5' %>
-         <%#    </div>
-      </div>
-
-      <div class="carousel-item" data-interval="2000" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwk8hef4l/image/upload/v1630947272/studying2_kmu5zd.jpg)">
-         <div class="carousel-captionn">
-            <div class="content">
-              <div class="slider-wrapper">
-                  <div>
-                    <h1>Achieve your</h1>
-                  </div>
-                  <div class="slider">
-                    <div class="slider-text1">goals!</div>
-                    <div class="slider-text2">dreams!</div>
-                    <div class="slider-text3">something!</div>
-                  </div>
-              </div>
-            </div>
-                <p>Revolusionize the way you learn</p>
-                <%= link_to 'Create a card', new_path, class: 'btn btn-primary btn-lg mt-5' %>
-               <%#  <%= link_to 'Find a flashcard', search_path, class: 'btn btn-primary btn-lg mt-5' %>
-
-         <%#  </div>
-     <%#  </div>
-
-      <div class="carousel-item" data-interval="2000" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwk8hef4l/image/upload/v1630947268/studying3_eagucm.jpg)">
-         <div class="carousel-captionn">
-            <div class="content">
-              <div class="slider-wrapper">
-                  <div>
-                    <h1>Achieve your</h1>
-                  </div>
-                  <div class="slider">
-                    <div class="slider-text1">goals!</div>
-                    <div class="slider-text2">dreams!</div>
-                    <div class="slider-text3">something!</div>
-                  </div>
-              </div>
-            </div>
-                <p>Revolusionize the way you learn</p>
-                <%= link_to 'Create a card', new_path, class: 'btn btn-primary btn-lg mt-5' %>
-              <%#   <%= link_to 'Find a flashcard', search_path, class: 'btn btn-primary btn-lg mt-5' %>
-
-          <%# </div>
-      </div>
+        <div class="float-left row">
+          <%= link_to 'Create a card', new_path, class: 'btn btn-primary btn-lg m-4 ', class:"buttons-first" %>
+          <%= link_to 'Find a flashcard', search_path, class: 'btn btn-primary btn-lg ', class:"buttons-first" %>
+        </div>
     </div>
-
-    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-
-  </div>   %>
-
-
-
+  </div>
 
 
   <div class="middle-banner">
